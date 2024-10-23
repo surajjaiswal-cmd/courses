@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Starbucks</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        3. section {
+            background-repeat: no-repeat;
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        h1 {
+            font-size: 35px;
+            position: absolute;
+            left: 41%;
+            background-color: #ffffff6f;
+            padding: 10px 35px 10px 35px;
+            font-family: Lucida Sans;
+        }
+
+        .folder1 {
+            background-color: rgba(84, 27, 4, 0.900);
+            border-radius: 20px;
+            width: 450px;
+            height: 500px;
+            padding: 18px 0px 35px 20px;
+            position: absolute;
+            top: 250px;
+            left: 18%;
+        }
+
+        .item1 {
+            margin: 20px 20px;
+            float: left;
+        }
+
+        h2 {
+            color: rgb(230, 166, 87);
+            margin: 0px 10px 20px 10px;
+            font-family: Lucida Sans;
+            font-weight: 400;
+        }
+
+        p {
+            color: rgb(245, 245, 245);
+            margin-left: 10px;
+            transform: translateY(-30%);
+            font-family: Lucida Sans;
+            font-weight: lighter;
+        }
+
+        .folder2 {
+            background-color: rgba(84, 27, 4, 0.900);
+            border-radius: 20px;
+            width: 450px;
+            height: 500px;
+            padding: 18px 20px 35px 0px;
+            position: absolute;
+            top: 250px;
+            left: 52%;
+        }
+
+        .item2 {
+            float: right;
+            margin: 20px 20px;
+        }
+
+
+        #img {
+            width: 100%;
+            height: 945px;
+            border-radius: 0%;
+            transition: transform 0.3s ease;
+        }
+
+        #img:hover {
+            transform: scale(1);
+
+        }
+
+        img {
+            width: 120px;
+            height: 90px;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        img:hover {
+            transform: scale(1.1);
+        }
+
+        .drink1 {
+            display: inline-block;
+        }
+
+        .drink1 p {
+            margin-left: 10px;
+
+        }
+
+        .drink2 {
+            display: inline-block;
+        }
+
+        .drink2 p {
+            text-align: right;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <h1>
+            Starbucks Menu
+        </h1>
+        <img id="img" src="starbucks-bg.jpg" alt="bg pic">
+        <div class="folder1">
+            <div class="item1">
+                <div class="drink1"><img src="sb-d1.jpg" alt=""></div>
+                <div class="drink1">
+                    <h2>Hot Cappuccino</h2>
+                    <p>Medium Rs. 320 <br>Large Rs. 640</p>
+                </div>
+            </div>
+            <div class="item1">
+                <div class="drink1"><img src="sb-d2.jpg" alt=""></div>
+                <div class="drink1">
+                    <h2>Hot Americano</h2>
+                    <p>Small Rs. 240 <br> Large Rs. 560</p>
+                </div>
+            </div>
+            <div class="item1">
+                <div class="drink1"><img src="sb-d3.jpg" alt=""></div>
+                <div class="drink1">
+                    <h2>Hot Latte</h2>
+                    <p>Medium Rs. 540 <br>Large Rs. 750</p>
+                </div>
+            </div>
+            <div class="item1">
+                <div class="drink1"><img src="sb-d4.jpg" alt=""></div>
+                <div class="drink1">
+                    <h2>Hot Espresso</h2>
+                    <p>Medium Rs. 450 <br>Large Rs. 670</p>
+                </div>
+            </div>
+        </div>
+        <div class="folder2">
+            <div class="item2">
+                <div class="drink2">
+                    <h2>Iced Cappuccino</h2>
+                    <p>Small Rs. 340 <br> Large Rs. 680</p>
+                </div>
+                <div class="drink2"><img src="sb-d5.jpg" alt=""></div>
+            </div>
+            <div class="item2">
+                <div class="drink2">
+                    <h2>Iced Americano</h2>
+                    <p>Small Rs. 4566 <br> Large Rs. 670</p>
+                </div>
+                <div class="drink2"><img src="sb-d6.jpg" alt=""></div>
+            </div>
+            <div class="item2">
+                <div class="drink2">
+                    <h2>Iced Milky Latte</h2>
+                    <p>Small Rs. 120 <br>Large Rs. 320</p>
+                </div>
+                <div class="drink2"><img src="sb-d7.jpg" alt=""></div>
+            </div>
+            <div class="item2">
+                <div class="drink2">
+                    <h2>Iced Espresso</h2>
+                    <p>small Rs. 230 <br>Large Rs. 450</p>
+                </div>
+                <div class="drink2"><img src="sb-d8.jpg" alt=""></div>
+            </div>
+        </div>
+
+    </section>
+
+</body>
+
+</html>

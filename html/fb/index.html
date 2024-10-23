@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Facebook Signup</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        font-family: arial, sans-serif;
+      }
+      #head {
+        background-color: rgb(18, 82, 201);
+        padding: 30px;
+      }
+      h1 {
+        color: white;
+        font-size: 70px;
+        margin-left: 30px;
+      }
+      h2 {
+        font-size: 50px;
+        font-family: Segoe UI Light;
+        margin-bottom: 15px;
+      }
+      .headdiv {
+        display: inline-block;
+      }
+      .headdiv a {
+        background-color: rgb(0, 0, 168);
+        padding: 2px 9px;
+        color: black;
+        text-decoration: none;
+      }
+      .headdiv a:hover {
+        color: rgb(190, 189, 189);
+        background-color: rgb(35, 66, 66);
+      }
+      #p1 {
+        visibility: hidden;
+      }
+      #passdiv {
+        transform: translateY(32%);
+      }
+
+      .container {
+        width: 40%;
+        height: 900px;
+        float: right;
+        margin-top: 50px;
+        margin-right: 100px;
+      }
+      form {
+        margin: 30px 0;
+      }
+      #p2{
+        margin-top: 30px;
+        font-size: 20px;
+      }
+      .input-group {
+        margin: 30px 0;
+      }
+      .input-group input {
+        width: 55%;
+      }
+      button {
+        background-color: red;
+        padding: 2px 9px;
+        border-radius: 10px;
+      }
+      button:hover {
+        background-color: #464040;
+        color: white;
+      }
+      .helps {
+        width: 40%;
+        float: left;
+        margin-left: 60px;
+      }
+      .helpin p {
+        font-size: 30px;
+        margin: 30px 10px;
+        font-family: "Barlow", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+      }
+      .helpin img {
+        width: 700px;
+        height: 500px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="head">
+      <div class="headdiv">
+        <h1>Facebook</h1>
+      </div>
+      <div class="headdiv">
+        <p id="p1">
+          Lorem, ipsum dolor sit amet consectet sit amet consectetur adipisicing
+          elit. Alias distinctio
+        </p>
+      </div>
+      <div class="headdiv">
+        <label for="email">Email or Phone <br /></label>
+        <input type="text" id="email" name="email" required />
+      </div>
+      <div class="headdiv" id="passdiv">
+        <label for="password">Password <br /></label>
+        <input type="password" id="password" name="password" required />
+        <br />
+        forget password ?
+      </div>
+      <div class="headdiv">
+        <a href="#"> log in</a>
+      </div>
+    </div>
+    <div class="helps">
+      <div class="helpin">
+        <p>
+          Facebook helps you connect and share with your family and friends.
+        </p>
+      </div>
+      <div class="helpin">
+        <img src="img/fb.jpg" alt="fb logo" title="Facebook Natwork" />
+      </div>
+    </div>
+    <div class="container">
+      <div class="form">
+        <h2>Create an account</h2>
+        <hr />
+        <p id="p2">It's quick and easy</p>
+        <form>
+          <div class="input-name">
+            <label for="firstName"></label>
+            <input
+              type="text"
+              id="firstName"
+              name="firstName"
+              placeholder="Frist name"
+              required />
+
+            <label for="lastName"></label>
+            <input
+              type="text"
+              id="lastName"
+              name="lastName"
+              placeholder="Last Name"
+              required />
+          </div>
+          <div class="input-group">
+            <label for="mobileNo"></label>
+            <input
+              type="number"
+              id="mobileNo"
+              name="mobileNo"
+              minlength="10"
+              placeholder="Mobile No."
+              required />
+          </div>
+          <div class="input-group">
+            <label for="password"></label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="password"
+              required />
+          </div>
+          <div class="input-group">
+            <label for="birthday"
+              >Birthday <br />
+              <br
+            /></label>
+            <input type="date" id="birthday" name="birthday" required />
+          </div>
+          <div>
+            <label for="gender">Gender <br /><br /></label>
+            <input
+              type="radio"
+              id="gender-female"
+              name="gender"
+              value="female" />
+            <label for="gender-female">Female</label>
+            <input type="radio" id="gender-male" name="gender" value="male" />
+            <label for="gender-male">Male</label>
+            <input
+              type="radio"
+              id="gender-custom"
+              name="gender"
+              value="custom" />
+            <label for="gender-custom">Custom</label>
+          </div>
+        </form>
+        <div class="input-group">
+          <p>
+            By clicking Sign Up, you agree to our
+            <a href="#">Terms and Conditions</a>. Learn how we collect and share
+            your data. Visit the <a href="#">About Us</a> page to know more
+            about our policies.
+          </p>
+        </div>
+        <div class="input-group">
+          <button type="submit">Agree</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
