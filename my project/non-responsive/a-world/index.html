@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>World</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        color: white;
+        text-align: center;
+        font-size: 35px;
+        font-family: "comic sans  ms", cursive;
+        margin-top: 90px;
+      }
+      #h1 {
+        color: white;
+        text-align: center;
+        font-size: 50px;
+        font-family: "comic sans  ms", cursive;
+        padding: 3px 0px 20px;
+      }
+
+      h2 {
+        font-size: 40px;
+        font-family: Segoe UI Black;
+        padding-left: 50px;
+      }
+      h3 {
+        font-size: 30px;
+        font-family: sans-serif;
+      }
+      h4 {
+        font-size: 20px;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        color: #2c4c9e;
+      }
+
+      a {
+        color: rgb(243, 242, 242);
+        text-decoration: none;
+        background-color: #101319;
+        padding: 10px 40px;
+        border-radius: 5px;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 15px;
+        margin-top: 40;
+      }
+      a:hover {
+        background-color: rgb(66, 80, 86);
+        color: white;
+      }
+      p {
+        line-height: 40px;
+      }
+      #p1 {
+        width: 10;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 20px;
+        color: #ffffff;
+        text-align: center;
+        padding: 10px 0px 30px 0px;
+      }
+      #p2 {
+        padding-left: 50px;
+        font-size: 20px;
+        font-family: Arial, Helvetica, sans-serif;
+        padding-bottom: 40px;
+      }
+      .main-helding {
+        background-image: url(img/banner-bg.png);
+        background-size: 100%;
+        background-repeat: no-repeat;
+        width: 100%;
+        height: auto;
+        padding: 10px 0px 500px 0px;
+      }
+      .topnev {
+        text-align: center;
+        padding: 3%;
+      }
+      .navlink {
+        color: aliceblue;
+        background-color: rgba(0, 128, 0, 0);
+        text-align: center;
+        text-decoration: none;
+        padding: 2%;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      .getaqoute {
+        color: black;
+        text-decoration: none;
+        background-color: #ffffff;
+        padding: 10px 30px;
+        border-radius: 15px;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 15px;
+      }
+      .getaqoute:hover {
+        background-color: rgb(26, 53, 70);
+        color: white;
+      }
+      .divimg {
+        width: 31%;
+        display: inline-block;
+        margin-bottom: 4%;
+        transition: transform 0.3s ease;
+      }
+      .hoverzoom {
+        transition: transform 0.3s;
+      }
+      .hoverzoom:hover {
+        transform: scale(1.1);
+      }
+      .divimg:hover {
+        image-rendering: unset;
+      }
+      .servicelist {
+        color: black;
+        text-decoration: none;
+        background-color: #2d262651;
+        padding: 5px 30px;
+        border-radius: 12px;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 15px;
+        margin-top: 40;
+      }
+      .servicelist:hover {
+        background-color: rgb(23, 75, 107);
+        color: white;
+      }
+      .servicediv {
+        margin-top: 4%;
+      }
+      .about {
+        background-image: url(img/blog-bg.png);
+        background-size: 100%;
+        background-repeat: no-repeat;
+        width: 100%;
+        height: auto;
+        padding: 10px 0 500px 0;
+        display: flex;
+        justify-content: space-between;
+      }
+      .about video {
+        width: 600px;
+        height: auto;
+        margin-top: 22%;
+        margin-right: 5%;
+        box-shadow: 10px 10px 20px rgb(205, 193, 193);
+        transition: transform 0.4s;
+        border-radius: 10px;
+      }
+      .about video:hover {
+        transform: scale(1.1);
+      }
+      .about div {
+        margin-top: 25%;
+      }
+      .about h2 {
+        margin: 0%;
+        color: #e7dede;
+      }
+      .about p {
+        color: #130707;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana;
+        margin-left: 50px;
+        margin-top: 50px;
+        font-weight: bold;
+      }
+      .about a {
+        color: #eceaea;
+        margin-left: 50px;
+      }
+      .mainbox {
+        text-align: center;
+        margin: 10px auto 5px;
+        width: 60%;
+        padding: 100px;
+        background-color: #fbfdff00;
+        box-shadow: 1px 1px 20px rgba(128, 128, 128, 0.516);
+        border-radius: 30px;
+        display: flex;
+        justify-content: space-between;
+      }
+      .testimonial h2 {
+        text-align: center;
+      }
+
+      .testimonial p {
+        width: 50%;
+        background-color: #fbfdff00;
+        border: 2px solid #050404f6;
+        padding: 90px 10px;
+        margin: -1px -40px;
+        border-radius: 30px;
+        font-family: Microsoft JhengHei Light;
+        font-weight: bold;
+      }
+      .testimonial img {
+        width: 200px;
+        height: 200px;
+        margin: 50px 0px;
+      }
+      .namecus {
+        text-align: left;
+        margin: 100px 100px 100px -50px;
+      }
+      .why {
+        text-align: center;
+        margin: 200px;
+      }
+      .why p {
+        font-family: Microsoft JhengHei Light;
+        margin: 70px;
+      }
+      .letstalk {
+        display: flex;
+        justify-content: space-between;
+        width: 70%;
+        margin: 10px auto;
+        border: 2px solid #333333f6;
+        border-radius: 19px;
+      }
+      .letstalk div {
+        padding: 10px 50px;
+        margin: auto 30px;
+      }
+      .entermail {
+        font-size: 25px;
+        margin: 100px 100px;
+        font-family: "Courier New", Courier, monospace;
+        display: flex;
+        justify-content: space-between;
+        width: 40%;
+        margin: 300px auto 40px;
+        padding: 10px 40px;
+        border: 2px solid #f7f5f5f6;
+        border-radius: 90px;
+        background-color: #fff;
+      }
+      .entermail div {
+        font-size: 25px;
+        margin: auto 100px;
+        font-family: "Courier New", Courier, monospace;
+        font-weight: bold;
+      }
+      .lastdiv {
+        background-image: url(img/footer-bg.png);
+        background-size: 100%;
+        background-repeat: no-repeat;
+        width: 100%;
+        height: auto;
+        padding: 1px 0px 20px 0px;
+        text-align: center;
+        margin-top: 80px;
+        background-color: #6e6d6d00;
+      }
+      .call {
+        color: #eceaea;
+        math-depth: 70px;
+      }
+      .mailid {
+        color: white;
+        margin-top: 30px;
+      }
+      .social {
+        margin-top: 30px;
+      }
+      footer {
+        background-color: #3a5140;
+        padding: 20px;
+        font-size: 19px;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main-helding">
+      <h1>A-World</h1>
+      <div class="topnev">
+        <a class="navlink" href="#">HOME</a> &emsp13;
+        <a class="navlink" href="#about">ABOUT</a> &emsp13;
+        <a class="navlink" href="#service">SERVICES</a> &emsp13;
+        <a class="navlink" href="#bloge">BLOG</a> &emsp13;
+        <a class="navlink" href="#lastdiv1">COUNTECT US</a> &emsp13; <br />
+
+        <div>
+          <h1 id="h1">ADVENTURE</h1>
+          <p id="p1">
+            There are many variations of passages of Lorem Ipsum Lorem ipsum
+            dolor sit amet consectetur adipisicing elit. <br />
+            Necessitatibus repellendus consectetur obcaecati, optio
+          </p>
+          <a class="getaqoute" href="#">GET A QOUTE</a>
+        </div>
+      </div>
+    </div>
+    <div id="service">
+      <h2>Services</h2>
+      <p id="p2">
+        We have many types of service to make you feel fresh chake belowe
+      </p>
+
+      <center>
+        <div class="divimg">
+          <img
+            src="img/img-1.png"
+            alt="rafting"
+            class="hoverzoom"
+            width="360"
+            height="auto" />
+          <br />
+          <div class="servicediv">
+            <a class="servicelist" href="#">RAFTING</a>
+          </div>
+        </div>
+        <div class="divimg">
+          <img
+            src="img/img-2.png"
+            alt="HIKING"
+            class="hoverzoom"
+            width="360"
+            height="auto" /><br />
+          <div class="servicediv">
+            <a class="servicelist" href="#">HIKING</a>
+          </div>
+        </div>
+        <div class="divimg">
+          <img
+            src="img/img-3.png"
+            alt="camping"
+            class="hoverzoom"
+            width="360"
+            height="auto" /><br />
+          <div class="servicediv">
+            <a class="servicelist" href="#">CAMPING</a>
+          </div>
+        </div>
+      </center>
+    </div>
+    <div class="about" id="about">
+      <div>
+        <h2>About Us</h2>
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus
+          culpa minus amet animi aliquam nemo ipsa mollitia repellat accusamus,
+          sit fuga numquam quam non voluptate dolore quisquam, qui et
+          repudiandae, blanditiis cupiditate adipisci! Alias enim sapiente
+          libero placeat cum ad esse a, veritatis similique consequuntur ducimus
+          error! Provident, maiores adipisci.
+        </p>
+        <br />
+        <br />
+        <a href="#">READ MORE</a>
+      </div>
+      <video controls muted autoplay loop>
+        <source src="vid/nature1.mp4" />
+      </video>
+    </div>
+    <div class="testimonial">
+      <h2>Testimonial</h2>
+      <div class="mainbox">
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla
+          aspernatur laudantium quae animi distinctio odio repellendus optio?
+          Consequatur sint, in, laudantium est ex animi qui modi sequi facere
+          esse voluptatum. Lorem ipsum dolor sit amet consectetur, adipisicing
+        </p>
+        <img src="img/client-img.png" alt="clint pic" />
+        <div class="namecus">
+          <h3>NAME</h3>
+          <h4>CUSTOMER</h4>
+        </div>
+      </div>
+    </div>
+    <div class="why" id="bloge">
+      <h2>Why choose Us</h2>
+      <p>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestiae
+        obcaecati deleniti fugit officia corrupti beatae tempora quae veritatis
+        nobis, non blanditiis. Est fugiat, asperiores dolores laboriosam minus
+        totam laudantium nemo ad nulla vitae ab consequuntur perspiciatis?
+        Nesciunt, ut officia voluptas exercitationem repudiandae numquam. Harum,
+        dolorum eum? Dolore eius, pariatur fugit officia, doloremque distinctio
+        ab quasi rem odit numquam cupiditate cumque dolorem in est? Veritatis
+        dolorum alias quidem maxime tenetur ex pariatur repudiandae incidunt
+        reprehenderit vero praesentium distinctio, doloribus ratione debitis?
+        Recusandae repellendus quo magnam aut! Corporis, facilis perspiciatis
+      </p>
+      <a href="#">READ MORE</a>
+    </div>
+    <div class="letstalk">
+      <h2>Let start Talk with US</h2>
+      <div>
+        <a href="#">Get A Quote</a>
+      </div>
+    </div>
+    <div class="lastdiv" id="lastdiv1">
+      <div class="entermail">
+        Enter Your Email
+        <div>Send US</div>
+      </div>
+      <div class="call">
+        <img src="img/call-icon.png" alt="call-icon" /><br />
+        Call +91 1234567890
+      </div>
+      <div class="mailid">
+        <img src="img/mail-icon.png" alt="mail-icon" /> <br />
+        demo@gamil.com
+      </div>
+      <div class="social">
+           <img src="img/fb-icon.png" alt="fb-icon" />
+        <img src="img/twitter-icon.png" alt="twitter-icon" />
+        <img src="img/linkedin-icon.png" alt="linkedin-icon" />
+        <img src="img/instagram-icon.png" alt="instagram-icon" />
+      </div>
+    </div>
+    <footer>
+      2024 All Rights Reserved. Design by Free html Templates Distributed by
+      Suraj jaiswal
+    </footer>
+  </body>
+</html>
