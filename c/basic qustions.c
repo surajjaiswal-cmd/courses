@@ -70,43 +70,43 @@ int main()
     // printf("\nreminder=%d", rem);
     //========================================================================================
     // percentes and total of 5 subbjects
-    // float x;
-    // int y;
-    // float res;
-    // printf("enter a desimal value x=");
-    // scanf("%f", &x);
-    // printf("enter a int value y=");
-    // scanf("%d", &y);
-    // res = x - y;
-    // printf("result=%f", res);
-    // float h, e, m, s, c, p, total, per;
-    // printf("hindi = ");
-    // scanf("%f", &h);
-    // printf("engish = ");
-    // scanf("%f", &e);
-    // printf("maths = ");
-    // scanf("%f", &m);
-    // printf("science = ");
-    // scanf("%f", &s);
-    // printf("physics = ");
-    // scanf("%f", &p);
-    // // total karna hai ab
-    // total = h + e + m + s + p;
-    // printf("total = %f", total);
-    // per = (h + e + m + s + p * 100) / 5;
-    // printf("\nper = %f", per);
+    float x;
+    int y;
+    float res;
+    printf("enter a desimal value x=");
+    scanf("%f", &x);
+    printf("enter a int value y=");
+    scanf("%d", &y);
+    res = x - y;
+    printf("result=%f", res);
+    float h, e, m, s, c, p, total, per;
+    printf("hindi = ");
+    scanf("%f", &h);
+    printf("engish = ");
+    scanf("%f", &e);
+    printf("maths = ");
+    scanf("%f", &m);
+    printf("science = ");
+    scanf("%f", &s);
+    printf("physics = ");
+    scanf("%f", &p);
+    // total karna hai ab
+    total = h + e + m + s + p;
+    printf("total = %f", total);
+    per = (h + e + m + s + p * 100) / 5;
+    printf("\nper = %f", per);
     //========================================================================================
-    pre increament post increament
-    int a, b;
-    printf("enter the value of a = ");
-    scanf("%d", &a);
-    printf("\n new value of a = %d", ++a);
-    printf("\n new value of a = %d", a);
-    printf("\nenter the value of b = ");
-    scanf("%d", &b);
-    printf("\nchange value of b = %d", --b);
-    printf("\nnnew value of b = %d", b);
-    ========================================================================================
+    //pre increament post increament
+    // int a, b;
+    // printf("enter the value of a = ");
+    // scanf("%d", &a);
+    // printf("\n new value of a = %d", ++a);
+    // printf("\n new value of a = %d", a);
+    // printf("\nenter the value of b = ");
+    // scanf("%d", &b);
+    // printf("\nchange value of b = %d", --b);
+    // printf("\nnnew value of b = %d", b);
+    //========================================================================================
     // if or else
     // find gross salary by given basic salary
 
