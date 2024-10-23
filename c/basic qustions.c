@@ -1,7 +1,6 @@
 #include <stdio.h>
 int main()
 {
-
     // earthmatic opratore
 
     // float x, y, r;
@@ -97,41 +96,39 @@ int main()
     // per = (h + e + m + s + p * 100) / 5;
     // printf("\nper = %f", per);
     //========================================================================================
-    // pre increament post increament
-    // int a, b;
-    // printf("enter the value of a = ");
-    // scanf("%d", &a);
-    // printf("\n new value of a = %d", ++a);
-    // printf("\n new value of a = %d", a);
-    // printf("\nenter the value of b = ");
-    // scanf("%d", &b);
-    // printf("\nchange value of b = %d", --b);
-    // printf("\nnnew value of b = %d", b);
-    //========================================================================================
+    pre increament post increament
+    int a, b;
+    printf("enter the value of a = ");
+    scanf("%d", &a);
+    printf("\n new value of a = %d", ++a);
+    printf("\n new value of a = %d", a);
+    printf("\nenter the value of b = ");
+    scanf("%d", &b);
+    printf("\nchange value of b = %d", --b);
+    printf("\nnnew value of b = %d", b);
+    ========================================================================================
+    // if or else
+    // find gross salary by given basic salary
 
-    // // if or else
+//     int gs, bs; // gs= gross salary bs=basic salary
+//     printf("enter basic salary = ");
+//     scanf("%d", &bs);
+//     if (bs <= 10000)
+//     {
+//         bs = bs + (bs * 20 / 100) + (bs * 80 / 100);
+//         printf("your gross salary = %d", bs);
+//     }
+//     else if (bs <= 20000)
+//     {
+//         bs = bs + (bs * 25 / 100) + (bs * 90 / 100);
+//         printf("your gross salary = %d", bs);
+//     }
+//     else if (bs > 20000)
+//     {
+//         bs = bs + (bs * 30 / 100) + (bs * 95 / 100);
+//         printf("your gross salary = %d", bs);
+//     }
 
-    // // find gross salary by given basic salary
-
-    int gs, bs; // gs= gross salary bs=basic salary
-    printf("enter basic salary = ");
-    scanf("%d", &bs);
-    if (bs <= 10000)
-    {
-        bs = bs + (bs * 20 / 100) + (bs * 80 / 100);
-        printf("your gross salary = %d", bs);
-    }
-    else if (bs <= 20000)
-    {
-        bs = bs + (bs * 25 / 100) + (bs * 90 / 100);
-        printf("your gross salary = %d", bs);
-    }
-    else if (bs > 20000)
-    {
-        bs = bs + (bs * 30 / 100) + (bs * 95 / 100);
-        printf("your gross salary = %d", bs);
-    }
-
-    return 0;
-}
-//==================================================================
+//     return 0;
+// }
+//========
