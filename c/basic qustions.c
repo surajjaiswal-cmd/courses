@@ -70,33 +70,33 @@ int main()
     // printf("\nreminder=%d", rem);
     //========================================================================================
     // percentes and total of 5 subbjects
-    float x;
-    int y;
-    float res;
-    printf("enter a desimal value x=");
-    scanf("%f", &x);
-    printf("enter a int value y=");
-    scanf("%d", &y);
-    res = x - y;
-    printf("result=%f", res);
-    float h, e, m, s, c, p, total, per;
-    printf("hindi = ");
-    scanf("%f", &h);
-    printf("engish = ");
-    scanf("%f", &e);
-    printf("maths = ");
-    scanf("%f", &m);
-    printf("science = ");
-    scanf("%f", &s);
-    printf("physics = ");
-    scanf("%f", &p);
-    // total karna hai ab
-    total = h + e + m + s + p;
-    printf("total = %f", total);
-    per = (h + e + m + s + p * 100) / 5;
-    printf("\nper = %f", per);
+    // float x;
+    // int y;
+    // float res;
+    // printf("enter a desimal value x=");
+    // scanf("%f", &x);
+    // printf("enter a int value y=");
+    // scanf("%d", &y);
+    // res = x - y;
+    // printf("result=%f", res);
+    // float h, e, m, s, c, p, total, per;
+    // printf("hindi = ");
+    // scanf("%f", &h);
+    // printf("engish = ");
+    // scanf("%f", &e);
+    // printf("maths = ");
+    // scanf("%f", &m);
+    // printf("science = ");
+    // scanf("%f", &s);
+    // printf("physics = ");
+    // scanf("%f", &p);
+    // // total karna hai ab
+    // total = h + e + m + s + p;
+    // printf("total = %f", total);
+    // per = (h + e + m + s + p * 100) / 5;
+    // printf("\nper = %f", per);
     //========================================================================================
-    //pre increament post increament
+    // pre increament post increament
     // int a, b;
     // printf("enter the value of a = ");
     // scanf("%d", &a);
@@ -110,25 +110,25 @@ int main()
     // if or else
     // find gross salary by given basic salary
 
-//     int gs, bs; // gs= gross salary bs=basic salary
-//     printf("enter basic salary = ");
-//     scanf("%d", &bs);
-//     if (bs <= 10000)
-//     {
-//         bs = bs + (bs * 20 / 100) + (bs * 80 / 100);
-//         printf("your gross salary = %d", bs);
-//     }
-//     else if (bs <= 20000)
-//     {
-//         bs = bs + (bs * 25 / 100) + (bs * 90 / 100);
-//         printf("your gross salary = %d", bs);
-//     }
-//     else if (bs > 20000)
-//     {
-//         bs = bs + (bs * 30 / 100) + (bs * 95 / 100);
-//         printf("your gross salary = %d", bs);
-//     }
+    int gs, bs; // gs= gross salary bs=basic salary
+    printf("enter basic salary = ");
+    scanf("%d", &bs);
+    if (bs <= 10000)
+    {
+        bs = bs + (bs * 20 / 100) + (bs * 80 / 100);
+        printf("your gross salary = %d", bs);
+    }
+    else if (bs <= 20000)
+    {
+        bs = bs + (bs * 25 / 100) + (bs * 90 / 100);
+        printf("your gross salary = %d", bs);
+    }
+    else if (bs > 20000)
+    {
+        bs = bs + (bs * 30 / 100) + (bs * 95 / 100);
+        printf("your gross salary = %d", bs);
+    }
 
-//     return 0;
-// }
+    return 0;
+}
 //========
