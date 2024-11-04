@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Numeric Pyramid</title>
+</head>
+
+<body>
+
+    <input id="height-input" type="number" placeholder="Enter pyramid height"><br>
+    <button id="generate-btn">Generate Pyramid</button>
+    <div id="pyramid-output"></div>
+
+    <script>
+        document.getElementById("generate-btn").onclick = function () {
+            let n = parseInt(document.getElementById("height-input").value);
+            let output = document.getElementById("pyramid-output");
+            output.innerHTML = ""; // Clear previous output
+
+            let nos = 1; // Number of symbols to print in each row
+
+            // Loop through each level of the pyramid
+            for (let i = 1; i <= n; i++) {
+                let row = ""; // Initialize a string for the current row
+
+                // Print leading spaces
+                for (let j = 1; j <= (n - i); j++) {
+                    row += " "; // Add spaces for pyramid shape
+                }
+
+                // Print numbers in the current row
+                for (let k = 1; k <= nos; k++) {
+                    row += k + " "; // Append the number followed by a space
+                }
+
+                output.innerHTML += row.trim() + "<br>"; // Add the row to the output
+                nos++; // Increase the number of symbols for the next row
+            }
+        };
+    </script>
+
+</body>
+
+</html>

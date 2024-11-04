@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>random img</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+        .main {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            width: 170px;
+            height: 140px;
+            border: 2px solid black;
+            margin: 10px 0 0 10px;
+            display: flex;
+            align-content: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .card img {
+            width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid main">
+
+    </div>
+
+    <script>
+        let a = document.querySelector('.main');
+        let img = '';
+        let imgs = [`https://i.pinimg.com/enabled/564x/8e/7c/f8/8e7cf820d304a8720afc8981c5043e3f.jpg`,
+            `https://i.pinimg.com/enabled/564x/2a/f6/e9/2af6e9b6060f0cc6218f5152be3cbdd4.jpg`,
+            `https://i.pinimg.com/enabled/236x/52/a6/8d/52a68d6f409d6761357a41320da4dcba.jpg`,
+            ` https://i.pinimg.com/236x/bb/30/74/bb30740bbb52e20d25389553448d9863.jpg`,
+            `https://i.pinimg.com/enabled/236x/06/cb/8e/06cb8e7877b238a97ec9952fdd13664c.jpg`]
+        for (let i = 0; i < 50; i++) {
+            let rend = Math.floor(Math.random() * 5);
+            img += `  <div class="card">
+            <img src="${imgs[rend]}">
+            </div>`;
+        }
+        a.innerHTML = img;
+    </script>
+</body>
+
+</html>

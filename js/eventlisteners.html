@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event listeners</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <style>
+        .div1 {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .innerdiv {
+            width: 8rem;
+            height: 8rem;
+            border: 2px solid black;
+            margin: .3rem;
+            align-content: center;
+            font-size: 2rem;
+            font-weight: 600;
+        }
+
+        .box {
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container text-center div1">
+        <h1>Box Game for Event listeners</h1>
+
+        <div class="box">
+            <div class="innerdiv" id="ele1">1</div>
+            <div class="innerdiv" id="ele2">2</div>
+        </div>
+        <div class="box">
+            <div class="innerdiv" id="ele3">3</div>
+            <div class="innerdiv" id="ele4">4</div>
+        </div>
+    </div>
+
+    <script>
+        let a = document.querySelector('#ele1');
+        a.addEventListener('mouseover', function () {
+            let r = Math.floor(Math.random() * 100);
+            a.innerText = r;
+        })
+        a.addEventListener('mouseout', function () {
+            a.innerHTML = '1';
+            a.style.cssText = "background-color:white; color:black;"
+        })
+
+        // -------------------------------------------
+
+        let b = document.querySelector('#ele2');
+        let clr = 'red';
+        b.addEventListener('mouseover', function () {
+            if (clr == 'red') {
+                b.style.backgroundColor = 'red';
+                b.style.color = 'white';
+                clr = 'green';
+            }
+            else if (clr == 'green') {
+                b.style.backgroundColor = 'green';
+                b.style.color = 'white';
+                clr = 'blue';
+            }
+            else {
+                b.style.backgroundColor = 'blue';
+                b.style.color = 'white';
+                clr = 'red';
+            }
+        })
+        b.addEventListener('mouseout', function () {
+            b.innerHTML = '2';
+            b.style.cssText = "background-color:white; color:black;"
+        })
+
+        // --------------------------------------------
+
+        let c = document.querySelector('#ele3');
+        c.addEventListener('mouseover', function () {
+            let r1 = Math.floor(Math.random() * 256);
+            let r2 = Math.floor(Math.random() * 256);
+            let r3 = Math.floor(Math.random() * 256);
+            c.style.backgroundColor = `rgb(${r1},${r2},${r3})`;
+            c.style.color = `rgb(${r3},${r2},${r1})`;
+
+        })
+        c.addEventListener('mouseout', function () {
+            c.innerHTML = '3';
+            c.style.cssText = "background-color:white; color:black;"
+        })
+        // --------------------------------------------
+
+        let d = document.querySelector('#ele4');
+        d.addEventListener('click', function () {
+            let r1 = Math.floor(Math.random() * 256);
+            let r2 = Math.floor(Math.random() * 256);
+            let r3 = Math.floor(Math.random() * 256);
+            a.style.backgroundColor = `rgb(${r1},${r2},${r3})`;
+            b.style.backgroundColor = `rgb(${r3},${r1},${r2})`;
+            c.style.backgroundColor = `rgb(${r2},${r3},${r1})`;
+        })
+        d.addEventListener('mouseleave', function () {
+            a.style.backgroundColor = `white`;
+            b.style.backgroundColor = `white`;
+            c.style.backgroundColor = `white`;
+        })
+    </script>
+
+
+
+
+    <hr>
+
+
+    <h2 class="text-center mt-5">Addition of two Number</h2>
+    <form class="container text-center" onsubmit="return false;">
+        <div>
+            <input type="text" placeholder="Enter Frist Number" class="frist m-5">
+        </div>
+        <div>
+            <input type="text" placeholder="Enter Second  Number" class="second">
+        </div>
+        <button class="btn m-5 "> Submite </button>
+    </form>
+    <p class="ans text-center">answer : </p>
+    <script>
+        function addi() {
+            let n1 = parseInt(document.querySelector('.frist').value);
+            let n2 = parseInt(document.querySelector('.second').value);
+            let res = n1 + n2;
+            document.querySelector('.ans').innerText = 'answer : ' + res;
+        }
+        let btn = document.querySelector('.btn');
+        btn.addEventListener('click', addi);
+
+    </script>
+
+
+
+</body>
+
+</html>

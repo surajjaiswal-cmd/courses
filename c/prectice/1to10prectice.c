@@ -63,21 +63,21 @@
 //--------------------------------------------------------------------------------------------------------
 // 5.Write c Program To Accept Student Roll No, Marks in 3 Subjects and
 // Calculate Total, Average and Print it.
-int main()
-{
-    int nayan, h, e, m;
-    printf("enter the number of hindi = ");
-    scanf("%d", &h);
-    printf("enter the number of englise = ");
-    scanf("%d", &e);
-    printf("enter the number of maths = \n");
-    scanf("%d", &m);
-    int sum = h + e + m;
-    printf(" the sum of total marks of 3 subjects = %d\n", sum);
-    int avg = sum / 3;
-    printf("total percente = %d\n", avg);
-    return 0;
-}
+// int main()
+// {
+//     int nayan, h, e, m;
+//     printf("enter the number of hindi = ");
+//     scanf("%d", &h);
+//     printf("enter the number of englise = ");
+//     scanf("%d", &e);
+//     printf("enter the number of maths = \n");
+//     scanf("%d", &m);
+//     int sum = h + e + m;
+//     printf(" the sum of total marks of 3 subjects = %d\n", sum);
+//     int avg = sum / 3;
+//     printf("total percente = %d\n", avg);
+//     return 0;
+// }
 // --------------------------------------------------------------------------------------------------------
 // 6. Write c Program to Read Three Numbers And Print The Biggest Of Given Three Numbers
 // int main()
@@ -107,29 +107,29 @@ int main()
 // }
 //--------------------------------------------------------------------------------------------------------
 // 7. Write c Program to print numeric pyramid
-// int main()
-// {
-//     int n;
-//     printf("enter number = ");
-//     scanf("%d", &n);
-//     int nos = 1;
-//     for (int i = 1; i <= n; i++)
-//     {
-//         for (int j = 1 ; j <= (n - i); j++)
-//         {
-//             printf(" ");
-//         }
-//         for (int k = 1; k <= nos; k++)
-//         {
-//             printf("%d ", k);
-//         }
-//         nos++;
-//         printf("\n");
-//     }
+int main()
+{
+    int n;
+    printf("enter number = ");
+    scanf("%d", &n);
+    int nos = 1;
+    for (int i = 1; i <= n; i++)
+    {
+        for (int j = 1 ; j <= (n - i); j++)
+        {
+            printf(" ");
+        }
+        for (int k = 1; k <= nos; k++)
+        {
+            printf("%d ", k);
+        }
+        nos++;
+        printf("\n");
+    }
 
-//     return 0;
-// }
-//--------------------------------------------------------------------------------------------------------
+    return 0;
+}
+// --------------------------------------------------------------------------------------------------------
 // 8. Write c Program to convert binary number to decimal number and decimal to binary by switc case
 // #include <math.h>
 
