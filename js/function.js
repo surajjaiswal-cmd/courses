@@ -59,14 +59,14 @@
 // reveseString(str);
 //===========================================================
 //5. Write a JavaScript function that reverses a number.
-// function reverse(num) {
-//   let newNum = 0;
-//   while (num) {
-//     let ld = num % 10;
-//     newNum = 10 * newNum + ld;
-//   num = Math.floor(num / 10);
-//   }
-//   console.log(newNum);
-// }
-// reverse(12345);
+function reverse(num) {
+  let newNum = 0;
+  while (num) {
+    let ld = num % 10;
+    newNum = 10 * newNum + ld;
+  num = Math.floor(num / 10);
+  }
+  console.log(newNum);
+}
+reverse(12345);
 //============================================================
