@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"content="width=device-width, initial-scale=1.0">
+    <title>Gradient Color</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            background-image: linear-gradient(to right, #e94d43, #22575a);
+        }
+
+        .main {
+            margin-top: 20rem;
+            height: auto;
+        }
+
+        #mybutton1 {
+            margin: .6rem;
+            border-radius: 10rem;
+            border: 0;
+            width: 6rem;
+            background-color: #22575ab9;
+        }
+
+        #mybutton2 {
+            margin: .6rem;
+            border-radius: 10rem;
+            border: 0;
+            width: 6rem;
+            background-color: #e94e43b8;
+        }
+
+        #copycode {
+            width: 70%;
+            height: auto;
+            margin: 0 auto;
+            padding: .3rem;
+            background-color: rgba(228, 232, 235, 0.174);
+            border-radius: .5rem;
+            border-left: 3px solid white;
+            color: rgba(255, 255, 255, 0.803);
+            font-size: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <button id="mybutton1" class="button">#e94d43</button>
+        <button id="mybutton2" class="button">#22575a</button>
+
+        <p id="copytext" class="text-light">Click to Copy Your code</p>
+
+        <div id="copycode">background-image : linear-gradient(to right,#e94d43,#22575a);
+        </div>
+    </div>
+
+    <script>
+        let btn1 = document.getElementById("mybutton1");
+        let btn2 = document.getElementById("mybutton2");
+        let rgb1 = "#e94d43";
+        let rgb2 = "#22575a";
+        let copyCode = document.getElementById("copycode");
+
+        let randomColor = () => {
+            let renNum = "0123456789abcdef";
+            let color = "#";
+            for (let i = 0; i < 6; i++) {
+                color += renNum[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+
+        let random1 = () => {
+            rgb1 = randomColor();
+            btn1.innerText = rgb1;
+            btn2.style.backgroundColor = rgb1;
+            document.body.style.backgroundImage = `linear-gradient(to right, ${rgb1}, rgb(34, 87, 90))`;
+            copyCode.innerText = `background-image : linear - gradient(to right, ${rgb1}, #22575a)`;
+        }
+
+        let random2 = () => {
+            rgb2 = randomColor();
+            btn1.innerText = rgb2;
+            btn1.style.backgroundColor = rgb2;
+            document.body.style.backgroundImage = `linear-gradient(to right, ${rgb1}, ${rgb2})`;
+            copyCode.innerText = `background-image : linear - gradient(to right, ${rgb1}, ${rgb2})`;
+        }
+        btn1.addEventListener("click", random1);
+        btn2.addEventListener("click", random2);
+        copyCode.addEventListener("click", () => {
+              navigator.clipboard.writeText(copyCode.innerText);
+              alert("Text Copid");
+        })
+       
+    </script>
+</body>
+
+</html>
