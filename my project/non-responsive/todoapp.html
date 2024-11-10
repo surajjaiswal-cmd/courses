@@ -19,16 +19,39 @@
         .addButton,
         .deleteButton {
             background-color: #d2ef15;
-            width: 4rem;
             border-radius: 10rem;
+            width: 5rem;
+            border: 0;
+            box-shadow: .1rem .1rem .9rem .3rem rgba(89, 103, 9, 0.427);
         }
 
-        form,
-        .total-work {
+        .clearbtn {
+            width: 5rem;
+            height: 1.5rem;
+            font-size: .8rem;
+            color: rgb(241, 241, 241);
+            background-color: #ef1515;
+            border-radius: 10rem;
+            border: 0;
+            display: none;
+            margin: 1rem auto;
+        }
+
+        form {
             display: grid;
             grid-template-columns: 200px 150px 100px;
             justify-content: center;
             column-gap: 10px;
+        }
+
+        .total-work {
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 200px 150px 100px;
+            justify-content: center;
+            column-gap: 10px;
+            padding: 1rem;
+            border-bottom: 1px solid wheat;
         }
     </style>
 </head>
@@ -42,32 +65,42 @@
             <input type="date" class="todo-date rounded border-1 my-3">
             <button type="button" class="border-1  addButton my-3">Add</button>
         </form>
-        <section class="total-todo text-white text-start"></section>
+        <ol class="total-todo text-white text-start"></ol>
+        <button type="button" class="clearbtn">Clear All</button>
     </div>
 
     <script>
         let inputList = document.querySelector('.todoList');
         let date = document.querySelector('.todo-date');
         let addBtn = document.querySelector('.addButton');
+        let clearbtn = document.querySelector('.clearbtn');
 
         let localTodoList = () => {
             return JSON.parse(localStorage.getItem('Todo List'));
         }
         let todoArray = localTodoList() || [];
 
+        let removeClearBtn = () => {
+            if (todoArray.length !== 0) clearbtn.style.display = "block";
+            else clearbtn.style.display = "none";
+        }
         let addtodotodispaly = (curEle) => {
+
             let listItem = document.createElement('div');
             listItem.classList.add('total-work');
             listItem.innerHTML = `
             <li>${curEle.task}</li>
            <div>${curEle.date}</div>
-             <button class="deleteButton">Delete</button>
+             <button class="deleteButton">Delete</button> 
+        
+
              `;
             document.querySelector('.total-todo').append(listItem);
             listItem.querySelector('.deleteButton').addEventListener('click', () => {
                 listItem.remove();
-                todoArray = todoArray.filter((eachitem)=> eachitem.task !== curEle.task)
+                todoArray = todoArray.filter((eachitem) => eachitem.task !== curEle.task)
                 localStorage.setItem('Todo List', JSON.stringify(todoArray));
+                removeClearBtn();
             });
         }
 
@@ -82,6 +115,8 @@
                 alert('same work alrady exist add another todo');
                 return;
             }
+
+
             let newArray = { task: inputList.value.trim(), date: date.value }
             todoArray.push(newArray);
 
@@ -89,20 +124,34 @@
             localStorage.setItem('Todo List', JSON.stringify(todoArray));
 
             // add todo items on page
-           addtodotodispaly(newArray);
+            addtodotodispaly(newArray);
             inputList.value = '';
             date.value = '';
+            removeClearBtn();
         }
         addBtn.addEventListener('click', manegelist);
 
         let showList = () => {
-
             todoArray.forEach((curEle) => {
                 addtodotodispaly(curEle);
             })
+            removeClearBtn();
         }
         showList();
-        // localStorage.clear();
+
+
+
+        let clearalltodo = () => {
+            // clear all todo list 
+            todoArray = [];
+            // upload at local storage 
+            localStorage.setItem('Todo List', JSON.stringify(todoArray));
+            //
+            document.querySelector('.total-todo').innerHTML = '';
+            removeClearBtn();
+        }
+
+        clearbtn.addEventListener('click', clearalltodo);
     </script>
 </body>
 
