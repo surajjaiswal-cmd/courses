@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>localStorage and JSON</title>
+</head>
+
+<body>
+  <p>this page about localStorage and JSON</p>
+  <script>
+    // localStorage.setItem("name", "suraj");
+    // localStorage.setItem("age", "23");
+    // localStorage.setItem("email", "jaiswal@gmail.com");
+    // console.log(localStorage.getItem("name"));
+    // localStorage.removeItem("age");
+    localStorage.clear();
+    // console.log(localStorage.getItem("name")); // this will return null 
+
+    // let JsUser = {
+    //   name: "suraj",
+    //   "full name": "suraj jaiswal",
+    //   age: 23,
+    //   moNum: 36498237496,
+    //   email: "surajjaiswal@githube.com",
+    // };
+
+
+    // JSON = Java Script Object Intantion
+    // to convert an object to JSON string 
+    // localStorage.setItem("JsUser", JSON.stringify(JsUser));\
+
+    // to convert a JSON string to object.
+    console.log(JSON.parse(localStorage.getItem("JsUser")));
+
+
+  </script>
+</body>
+
+</html>
