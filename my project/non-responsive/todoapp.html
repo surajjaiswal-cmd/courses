@@ -49,7 +49,6 @@
             display: grid;
             grid-template-columns: 200px 150px 100px;
             justify-content: center;
-            column-gap: 10px;
             padding: 1rem;
             border-bottom: 1px solid wheat;
         }
@@ -91,9 +90,7 @@
             listItem.innerHTML = `
             <li>${curEle.task}</li>
            <div>${curEle.date}</div>
-             <button class="deleteButton">Delete</button> 
-        
-
+             <button class="deleteButton">Delete</button>
              `;
             document.querySelector('.total-todo').append(listItem);
             listItem.querySelector('.deleteButton').addEventListener('click', () => {

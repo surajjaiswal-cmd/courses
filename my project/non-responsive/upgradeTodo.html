@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/3635c4cce0.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=edit_note" />
+
+    <style>
+        body {
+            background-color: #2c2e2f;
+        }
+
+        .main-section {
+            width: 40%;
+            height: auto;
+            min-height: 15rem;
+            background-color: #f0efef;
+            border-radius: 1rem;
+            margin-top: 5rem;
+        }
+
+        form {
+            display: grid;
+            grid-template-columns: 84% 10%;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .input {
+            border: 0;
+            height: 2rem;
+            color: #7b7878;
+            border-radius: 10rem 0 0 10rem;
+            font-size: .8rem;
+            padding-left: 2rem;
+            background-color: #f8f8f8;
+
+        }
+
+        .fa-plus {
+            font-size: 1rem;
+            background-color: #f8f8f8;
+            width: 200%;
+            height: 1.99rem;
+            border-radius: 0 10rem 10rem 0;
+            align-content: center;
+            transform: translateX(-.4rem);
+
+        }
+
+        input:focus {
+            outline: 0;
+        }
+
+        .warning {
+            background-color: rgba(255, 0, 0, 0.585);
+            font-size: .7rem;
+            text-align: left;
+            margin-top: -.8rem;
+            border-radius: 1rem;
+            width: 97%;
+        }
+
+        .listitem {
+            display: flex;
+            justify-content: space-between;
+            text-align: left;
+            font-size: .8rem;
+            color: #575555;
+            padding: .2rem 0;
+        }
+
+        .done {
+            text-decoration: line-through;
+            color: rgb(135, 139, 139);
+        }
+
+        .clearbtn {
+            border: 0;
+            font-size: .8rem;
+            background-color: #f8f8f8;
+            border-radius: 2rem;
+            padding: 0 1rem;
+            display: none;
+            margin: 1rem auto;
+            transform: translatey(-.8rem);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container main-section text-center">
+        <h2 class="py-3"><u>ToDo List </u>📘</h2>
+
+        <form>
+            <input type="text" placeholder="Enter To do Here...🖋️🖋️🖋️" class="input">
+            <button type="button" class="border-0 addbtn"><i class="fa-solid fa-plus"></i></button>
+        </form>
+        <div class="warning"></div>
+
+        <ol class="todolist">
+
+        </ol>
+
+        <button type="button" class="clearbtn">Clear All</button>
+    </div>
+    <script>
+        let input = document.querySelector('.input');
+        let todoList = document.querySelector('.todolist');
+        let addbtn = document.querySelector('.addbtn');
+        let clearBtn = document.querySelector('.clearbtn');
+
+        let getFromLocal = () => {
+            return JSON.parse(localStorage.getItem('Todo Work'));
+        }
+        let todoArr = getFromLocal() || [];
+
+
+        let removeClearBtn = () => {
+            if (todoArr.length !== 0) clearBtn.style.display = "block";
+            else clearBtn.style.display = "none";
+        }
+
+        let addTodoDisplay = (curEle) => {
+
+            let listItem = document.createElement('div');
+            listItem.classList.add('listitem');
+            listItem.innerHTML = `
+             <li><p>${curEle}</p></li>
+             <div>
+            <button title="Edit" type="button" class="edit-delete border-0 editbtn">✏️</button>
+            <button title="Done" type="button" class="edit-delete border-0 donebtn">✅</button>
+            <button title="Delete" type="button" class="edit-delete border-0 deletebtn">❌</button> </div>        
+            `;
+            todoList.append(listItem);
+            // delete button function
+            listItem.querySelector('.deletebtn').addEventListener('click', () => {
+                listItem.remove();
+                todoArr = todoArr.filter((eachItem) => eachItem !== curEle)
+                localStorage.setItem('Todo Work', JSON.stringify(todoArr));
+                removeClearBtn();
+            })
+            // Edit button function
+            listItem.querySelector('.editbtn').addEventListener('click', () => {
+                input.value = curEle;
+                listItem.remove();
+                todoArr = todoArr.filter((eachItem) => eachItem !== curEle)
+                localStorage.setItem('Todo Work', JSON.stringify(todoArr));
+                removeClearBtn();
+            })
+            // Mark as done button function
+            listItem.querySelector(".donebtn").addEventListener('click', () => {
+                listItem.querySelector('p').classList.toggle("done");
+                listItem.querySelector('.editbtn').style.display = "none";
+                listItem.querySelector('.donebtn').style.display = "none";
+            });
+        }
+
+        let addInList = () => {
+            document.querySelector('.warning').innerHTML = '';
+            if (input.value.trim() === '') {
+                document.querySelector('.warning').innerHTML = "<p><pre>    ⚠️ Please Enter A work To Do.</pre></p>";
+                return;
+            }
+            if (todoArr.includes(input.value)) {
+                document.querySelector('.warning').innerHTML = "<p><pre>    ⚠️ <b>Same Work!</b> Add Another </pre></p>";
+                return;
+            }
+
+            todoArr.push(input.value.trim());
+
+            localStorage.setItem('Todo Work', JSON.stringify(todoArr));
+
+            addTodoDisplay(input.value);
+            input.value = '';
+            removeClearBtn();
+        }
+
+        let showList = () => {
+            todoArr.forEach((curEle) => {
+                addTodoDisplay(curEle);
+            })
+            removeClearBtn();
+        }
+        showList();
+
+
+        let clearwork = () => {
+            todoArr = [];
+            localStorage.setItem('Todo Work', JSON.stringify(todoArr));
+            todoList.innerHTML = "";
+            removeClearBtn();
+        }
+
+        clearBtn.addEventListener('click', clearwork);
+        addbtn.addEventListener('click', addInList);
+    </script>
+</body>
+
+</html>
