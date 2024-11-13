@@ -9,43 +9,72 @@
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <style>
         body {
-            background-image: linear-gradient(to right, #5a0c06, #0f121a);
+            background-color: rgb(27, 67, 107);
+            font-size: 2rem;
+        
         }
 
         .main {
-            width: 15rem;
-            margin-top: 5rem;
+            width: 30rem;
+            margin-top: 15rem;
             border-radius: .5rem;
+
         }
 
         .curTime {
-            width: 100%;
-            background-color: #60bbc0;
+            background-color: rgb(6, 29, 52);
             border-radius: .5rem .5rem 0 0;
+            color: white;
         }
 
         .timeGame {
-            background-color: #60bbc0;
+            background-color: rgb(6, 29, 52);
             margin-top: .05rem;
             border-radius: 0 0 .5rem .5rem;
-            min-height: 10rem;
+            min-height: 20rem;
+
+        }
+
+        p {
+            font-size: 5rem;
+            color: rgb(218, 128, 234);
+            margin-bottom: -.5rem;
+        }
+
+        button {
+            padding: .1rem .7rem;
+            border: 0;
+            border-radius: 2rem;
+            margin-bottom: .3rem;
+            font-size: .8rem;
+            background: rgb(227, 223, 215);
+        }
+ button:hover{
+    background-color: rgb(141, 139, 134);
+ }
+         
+        .timelist{
+            font-size: 1rem;
+            color: whitesmoke;
         }
     </style>
 </head>
 
 <body>
     <div class="container text-center main">
-        <div class="curTime ">time and date</div>
+        <div class="curTime ">--- | ---</div>
         <div class="timeGame">
-            <p>0</p>
+            <p> 0 </p>
             <button type="button" class="start">Start</button>
-            <button type="button" class="stop" disabled>Stop</button>
-            <br>
+            <button type="button" class="stop">stop</button>
+
             <button type="button" class="gettime">Get Time</button>
             <button type="button" class="cleartime">Clear Time</button>
-            <br>
-            <button type="button" class="resat">Reset</button>
+
+            <button type="button" class="resat">Resat</button>
+            <hr style="color:rgb(27, 67, 107);">
             <div class="timelist"></div>
+
         </div>
     </div>
     <script>
@@ -55,14 +84,15 @@
         let cleartime = document.querySelector('.cleartime');
         let resat = document.querySelector('.resat');
 
-        // Function to get current date and time
         let getCurrentDateTime = () => {
             let now = new Date();
+            // Get date components 
             let year = now.getFullYear();
             let month = (now.getMonth() + 1).toString().padStart(2, '0');
             let day = now.getDate().toString().padStart(2, '0');
 
-            let hours = now.getHours();
+            // Get time components 
+            let hours = now.getHours().toString().padStart(2, '0');
             let minutes = now.getMinutes().toString().padStart(2, '0');
             let seconds = now.getSeconds().toString().padStart(2, '0');
 
@@ -79,7 +109,7 @@
         let num = 0;
         let timestart;
 
-        // Function to start the timer
+        //start time
         let starttime = () => {
             timestart = setInterval(() => {
                 document.querySelector('p').innerText = ++num;
@@ -89,7 +119,7 @@
         }
         start.addEventListener('click', starttime)
 
-        // Function to stop the timer
+        // stop time 
         let stoptime = () => {
             clearInterval(timestart);
             start.disabled = false;
@@ -97,15 +127,16 @@
         }
         stop.addEventListener('click', stoptime)
 
-        // Function to get the current count
+        // get time
         let gettime = () => {
             let timeListElement = document.createElement('div');
-            timeListElement.textContent = `Time: ${num}`;
+        
+            timeListElement.textContent = `Last Task complete in ${num} second`;
             document.querySelector('.timelist').append(timeListElement);
         }
         getTime.addEventListener('click', gettime);
 
-        // Function to clear the current count
+        // clear time 
         let cleantime = () => {
             document.querySelector('p').innerText = 0;
             clearInterval(timestart);
@@ -115,7 +146,7 @@
         }
         cleartime.addEventListener('click', cleantime);
 
-        // Function to reset everything
+        // resat time 
         let resattime = () => {
             document.querySelector('p').innerText = 0;
             clearInterval(timestart);

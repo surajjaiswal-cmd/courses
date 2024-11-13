@@ -16,13 +16,18 @@
             background-color: #2c2e2f;
         }
 
-        .main-section {
+        .topmain {
             width: 40%;
+            margin: 0 auto;
+        }
+
+        .main-section {
+            width: 100%;
             height: auto;
             min-height: 15rem;
             background-color: #f0efef;
-            border-radius: 1rem;
-            margin-top: 5rem;
+            border-radius: 1rem 0;
+            margin-top: .1rem;
         }
 
         form {
@@ -82,32 +87,45 @@
         }
 
         .clearbtn {
+            width: 45%;
+            height: auto;
             border: 0;
-            font-size: .8rem;
+            font-size: .6rem;
             background-color: #f8f8f8;
-            border-radius: 2rem;
-            padding: 0 1rem;
+            border-radius: 0 .5rem;
             display: none;
-            margin: 1rem auto;
-            transform: translatey(-.8rem);
+            margin-top: .1rem;
+        }
+
+        .dateandtime {
+            width: 45%;
+            height: auto;
+            background-color: #f8f8f8;
+            border-radius: 0 .5rem;
+            margin-top: 5rem;
+            margin-right: 0;
+            font-size: .6rem;
         }
     </style>
 </head>
 
 <body>
-    <div class="container main-section text-center">
-        <h2 class="py-3"><u>ToDo List </u>📘</h2>
+    <div class="text-center topmain">
+        <div class="container-fluid dateandtime"></div>
+        <div class="container main-section ">
+            <h2 class="py-3"><u>ToDo List </u>📘</h2>
 
-        <form>
-            <input type="text" placeholder="Enter To do Here...🖋️🖋️🖋️" class="input">
-            <button type="button" class="border-0 addbtn"><i class="fa-solid fa-plus"></i></button>
-        </form>
-        <div class="warning"></div>
+            <form>
+                <input type="text" placeholder="Enter To do Here...🖋️🖋️🖋️" class="input">
+                <button type="button" class="border-0 addbtn"><i class="fa-solid fa-plus"></i></button>
+            </form>
+            <div class="warning"></div>
 
-        <ol class="todolist">
+            <ol class="todolist">
 
-        </ol>
+            </ol>
 
+        </div>
         <button type="button" class="clearbtn">Clear All</button>
     </div>
     <script>
@@ -115,6 +133,31 @@
         let todoList = document.querySelector('.todolist');
         let addbtn = document.querySelector('.addbtn');
         let clearBtn = document.querySelector('.clearbtn');
+
+        // updating date and time 
+
+        let getCurrentDateTime = () => {
+            let now = new Date();
+            // Get date components 
+            let year = now.getFullYear();
+            let month = (now.getMonth() + 1).toString().padStart(2, '0');
+            let day = now.getDate().toString().padStart(2, '0');
+
+            // Get time components 
+            let hours = now.getHours().toString().padStart(2, '0');
+            let minutes = now.getMinutes().toString().padStart(2, '0');
+            let seconds = now.getSeconds().toString().padStart(2, '0');
+            
+            let amPm = hours >= 12 ? 'PM' : 'AM'; 
+            hours = hours % 12 || 12; 
+            let formattedHours = hours.toString().padStart(2, '0');
+           
+            let formattedString = `${day}/${month}/${year} ${formattedHours}:${minutes}:${seconds} ${amPm}`; 
+
+            document.querySelector('.dateandtime').textContent = formattedString;
+        }
+        setInterval(getCurrentDateTime, 1000);
+
 
         let getFromLocal = () => {
             return JSON.parse(localStorage.getItem('Todo Work'));
