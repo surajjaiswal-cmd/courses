@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event propagation</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+        .outer {
+            width: 20rem;
+            height: 20rem;
+            background-color: rgb(252, 193, 193);
+            border: 1px solid black;
+            margin: 0 auto;
+        }
+
+        .middle {
+            width: 15rem;
+            height: 15rem;
+            background-color: rgb(193, 252, 213);
+            border: 1px solid black;
+            margin: 0 auto;
+        }
+
+        .inner {
+            width: 10rem;
+            height: 10rem;
+            background-color: rgb(201, 193, 252);
+            border: 1px solid black;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+    <pre>
+        Event propagation defines the order in which events are received by the target element and its ancestors in the DOM
+        hierarchy. There are three phases in event propagation:
+        
+        1. => Capturing Phase (Event Capturing):
+        
+        The event starts from the window and travels down to the target element.
+        
+        It's less commonly used but can be handled by setting the third argument of addEventListener to true.
+        
+        2. =>Target Phase:
+        
+        The event reaches the target element.
+        
+        3. => Bubbling Phase (Event Bubbling):
+        
+        The event bubbles up from the target element to its ancestors in the DOM tree.
+        
+        This is the default phase when events are handled.
+    </pre>
+    <button type="button" class="btn-danger"> refresh</button>
+
+    <div class="outer container text-center">
+        <p class="opara">outer</p>
+        <div class="middle">
+            <p class="mpara">middle</p>
+            <div class="inner">
+                <p class="ipara">inner</p>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        let outer = document.querySelector('.outer');
+        let middle = document.querySelector('.middle');
+        let inner = document.querySelector('.inner');
+
+        let outermsg = (e) => {
+            // e.stopPropagation(); // it is use to stop propagation 
+            document.querySelector('.opara').innerHTML = `<p>outer event excuted</p>`
+            outer.style.backgroundColor = "red";
+            console.log('outer event excuted');
+        }
+
+        let middlemsg = (e) => {
+            // e.stopPropagation(); // it is use to stop propagation 
+            document.querySelector('.mpara').innerHTML = `<p>middle event excuted</p>`
+            middle.style.backgroundColor = "green";
+            console.log('middle event excuted');
+        }
+
+        let innermsg = (e) => {
+            // e.stopPropagation(); // it is use to stop propagation 
+            document.querySelector('.ipara').innerHTML = `<p>inner event excuted</p>`
+            inner.style.backgroundColor = "blue";
+            console.log('inner event excuted');
+        }
+
+        document.querySelector('button').addEventListener('click', () => {
+            location.reload();
+        })
+        // this will travel from target event to ancestor event : bubble phase
+        outer.addEventListener("click", outermsg);
+        middle.addEventListener("click", middlemsg);
+        inner.addEventListener("click", innermsg);
+
+        // this will travel from window to target event : capturing phase
+        // outer.addEventListener("click", outermsg, true);
+        // middle.addEventListener("click", middlemsg, true);
+        // inner.addEventListener("click", innermsg, true);
+
+    </script>
+
+</body>
+
+</html>
