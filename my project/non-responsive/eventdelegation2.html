@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Delegation 2</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <style>
+        .main {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .node {
+            width: 4rem;
+            height: 4rem;
+            border-radius: .5rem;
+            border: 1px solid black;
+            margin: .3rem;
+            background-color: #bebec4;
+        }
+
+        .child {
+            background-color: rgb(123, 159, 197);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container text-center mt-5">
+        <p>Select Element</p>
+        <div class="main"></div>
+    </div>
+
+    <script>
+        let main = document.querySelector('.main');
+        for (let i = 1; i <= 50; i++) {
+            let newNode = document.createElement('div');
+            newNode.classList.add('node');
+            newNode.innerHTML = `<div>ele-${i}</div>`;
+            main.append(newNode);
+        }
+        let adjustele = () => {
+            let target = event.target.closest('.node');
+            if (target) {
+                document.querySelectorAll('.node').forEach(node => {
+                    node.classList.remove('child');
+                });
+                target.classList.add('child');
+            }
+
+        }
+        main.addEventListener('click', adjustele);
+    </script>
+</body>
+
+</html>

@@ -14,6 +14,7 @@
             background-color: rgb(252, 193, 193);
             border: 1px solid black;
             margin: 0 auto;
+
         }
 
         .middle {
@@ -35,27 +36,25 @@
 </head>
 
 <body>
-    <pre>
-        Event propagation defines the order in which events are received by the target element and its ancestors in the DOM
+    <pre class="mt-5">
+        Event propagation defines the order in which events are received
+        by the target element and its ancestors in the DOM
         hierarchy. There are three phases in event propagation:
         
-        1. => Capturing Phase (Event Capturing):
+        1. => Capturing Phase (Event Capturing): The event starts from 
+        the window and travels down to the target element.It's less commonly
+         used but can be handled by setting the third argument of addEventListener to true.
         
-        The event starts from the window and travels down to the target element.
+        2. =>Target Phase: The event reaches the target element.
         
-        It's less commonly used but can be handled by setting the third argument of addEventListener to true.
-        
-        2. =>Target Phase:
-        
-        The event reaches the target element.
-        
-        3. => Bubbling Phase (Event Bubbling):
-        
-        The event bubbles up from the target element to its ancestors in the DOM tree.
-        
-        This is the default phase when events are handled.
+        3. => Bubbling Phase (Event Bubbling): The event bubbles up from 
+        the target element to its ancestors in the DOM tree. This is the 
+        default phase when events are handled.
     </pre>
-    <button type="button" class="btn-danger"> refresh</button>
+    <div class="container text-center ">
+        <button type="button" class="btn btn-danger"> refresh</button>
+        <p> open consol to know the tarvels of event excution</p>
+    </div>
 
     <div class="outer container text-center">
         <p class="opara">outer</p>
