@@ -12,7 +12,7 @@ let promise = new Promise((resolve, reject) => {
 
 promise
   .then((massage) => {
-    console.log(massage);git 
+    console.log(massage);
   })
   .catch((error) => {
     console.log(error);
@@ -20,6 +20,5 @@ promise
   .finally(() => {
     console.log("task complete...✅");
   });
-
 
 // promises are provided by browser API when we request to fatch any data. it is not user define.

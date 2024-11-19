@@ -9,26 +9,27 @@
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <style>
         body {
-            background-color: rgb(27, 67, 107);
+          background-image: linear-gradient(to right, #e94d43, #22575a);
             font-size: 2rem;
-        
+
         }
 
         .main {
             width: 30rem;
-            margin-top: 15rem;
+            margin-top: 10rem;
             border-radius: .5rem;
 
         }
 
         .curTime {
-            background-color: rgb(6, 29, 52);
+            background-color: rgba(43, 69, 121, 0.7);
             border-radius: .5rem .5rem 0 0;
             color: white;
+            font-size: 1.4rem;
         }
 
         .timeGame {
-            background-color: rgb(6, 29, 52);
+            background-color: rgba(43, 69, 121, 0.7);
             margin-top: .05rem;
             border-radius: 0 0 .5rem .5rem;
             min-height: 20rem;
@@ -49,11 +50,12 @@
             font-size: .8rem;
             background: rgb(227, 223, 215);
         }
- button:hover{
-    background-color: rgb(141, 139, 134);
- }
-         
-        .timelist{
+
+        button:hover {
+            background-color: rgb(141, 139, 134);
+        }
+
+        .timelist {
             font-size: 1rem;
             color: whitesmoke;
         }
@@ -72,7 +74,7 @@
             <button type="button" class="cleartime">Clear Time</button>
 
             <button type="button" class="resat">Resat</button>
-            <hr style="color:rgb(27, 67, 107);">
+            <hr style="color:rgb(221, 109, 23);">
             <div class="timelist"></div>
 
         </div>
@@ -86,25 +88,18 @@
 
         let getCurrentDateTime = () => {
             let now = new Date();
-            // Get date components 
-            let year = now.getFullYear();
-            let month = (now.getMonth() + 1).toString().padStart(2, '0');
-            let day = now.getDate().toString().padStart(2, '0');
-
-            // Get time components 
-            let hours = now.getHours().toString().padStart(2, '0');
-            let minutes = now.getMinutes().toString().padStart(2, '0');
-            let seconds = now.getSeconds().toString().padStart(2, '0');
-
-            let amPm = hours >= 12 ? 'PM' : 'AM';
-            hours = hours % 12 || 12;
-            let formattedHours = hours.toString().padStart(2, '0');
-
-            let formattedString = `${day}/${month}/${year} ${formattedHours}:${minutes}:${seconds} ${amPm}`;
-
-            document.querySelector('.curTime').textContent = formattedString;
+            let dataoption = {
+                weekday: "long",
+                month: "long",
+                day: "numeric",
+                year: "numeric",
+                hour: "numeric",
+                minute: "numeric",
+            }
+            let formater = new Intl.DateTimeFormat("en-us", dataoption);
+            document.querySelector('.curTime').textContent = formater.format(now);
         }
-        setInterval(getCurrentDateTime, 1000);
+        getCurrentDateTime();
 
         let num = 0;
         let timestart;
@@ -130,7 +125,7 @@
         // get time
         let gettime = () => {
             let timeListElement = document.createElement('div');
-        
+
             timeListElement.textContent = `Last Task complete in ${num} second`;
             document.querySelector('.timelist').append(timeListElement);
         }

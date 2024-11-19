@@ -90,7 +90,7 @@
             width: 45%;
             height: auto;
             border: 0;
-            font-size: .6rem;
+            font-size: .8rem;
             background-color: #f8f8f8;
             border-radius: 0 .5rem;
             display: none;
@@ -104,7 +104,7 @@
             border-radius: 0 .5rem;
             margin-top: 5rem;
             margin-right: 0;
-            font-size: .6rem;
+            font-size: .8rem;
         }
     </style>
 </head>
@@ -137,26 +137,20 @@
         // updating date and time 
 
         let getCurrentDateTime = () => {
-            let now = new Date();
-            // Get date components 
-            let year = now.getFullYear();
-            let month = (now.getMonth() + 1).toString().padStart(2, '0');
-            let day = now.getDate().toString().padStart(2, '0');
-
-            // Get time components 
-            let hours = now.getHours().toString().padStart(2, '0');
-            let minutes = now.getMinutes().toString().padStart(2, '0');
-            let seconds = now.getSeconds().toString().padStart(2, '0');
-            
-            let amPm = hours >= 12 ? 'PM' : 'AM'; 
-            hours = hours % 12 || 12; 
-            let formattedHours = hours.toString().padStart(2, '0');
-           
-            let formattedString = `${day}/${month}/${year} ${formattedHours}:${minutes}:${seconds} ${amPm}`; 
-
-            document.querySelector('.dateandtime').textContent = formattedString;
+            let cur = new Date();
+            let dateOption = {
+                weekday: "long",
+                month: "long",
+                day: "numeric",
+                year: "numeric",
+                hour: "numeric",
+                minute: "numeric",
+            };
+            let formater = new Intl.DateTimeFormat("en-us", dateOption);
+             
+            document.querySelector('.dateandtime').textContent = formater.format(cur);
         }
-        setInterval(getCurrentDateTime, 1000);
+        getCurrentDateTime();
 
 
         let getFromLocal = () => {
@@ -243,6 +237,12 @@
 
         clearBtn.addEventListener('click', clearwork);
         addbtn.addEventListener('click', addInList);
+
+        input.addEventListener("keydown", (event) => {
+                if (event.key === "Enter") {
+                   addInList();
+                }
+            });
     </script>
 </body>
 
