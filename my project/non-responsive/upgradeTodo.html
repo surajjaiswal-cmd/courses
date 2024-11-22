@@ -147,7 +147,7 @@
                 minute: "numeric",
             };
             let formater = new Intl.DateTimeFormat("en-us", dateOption);
-             
+
             document.querySelector('.dateandtime').textContent = formater.format(cur);
         }
         getCurrentDateTime();
@@ -239,10 +239,10 @@
         addbtn.addEventListener('click', addInList);
 
         input.addEventListener("keydown", (event) => {
-                if (event.key === "Enter") {
-                   addInList();
-                }
-            });
+            if (event.key === "Enter") {
+                addInList();
+            }
+        });
     </script>
 </body>
 

@@ -32,7 +32,8 @@ let getDateandTime = (dt) => {
   return formater.format(cur);
 };
 let getdata = async () => {
-  let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=153c307bfc4f2e128f0c62711c9f84a&units=metric`;
+    let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=153c307bfc4f2e128f0c62711c9f84a&units=metric`;
+  // this api link may not working 'https://openweathermap.org/current' open this site and creat account and replace this url with your api link or appid
   try {
     let response = await fetch(url);
     let data = await response.json();
