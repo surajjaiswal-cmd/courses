@@ -5,18 +5,6 @@ let cartPart = document.querySelector(".cart-part");
 let cartPartBorder = document.querySelector(".cart-part-border");
 let blankPart = document.querySelector(".blank-part");
 
-// function to add product,s ids to local storage 
-function addToCart(itemId) {
-  if (!bagCount.some((item) => item.id === itemId)) {
-    bagCount.push({ id: itemId, itemQuantity: 1 });
-    bag.innerHTML = bagCount.length;
-    localStorage.setItem("bagcount", JSON.stringify(bagCount));
-    cartItem = getCartItems();
-    addQunatityToCartItem();
-    updateTotalPrice(cartItem);
-  }
-}
-
 // function to copy product full details from items.js by id
 function getCartItems() {
   return bagCount.map((item) => {
@@ -40,11 +28,30 @@ function addQunatityToCartItem() {
 }
 
 // updading number of product on page bag icon
-if (bagCount.length > 0) {
-  bag.style.display = "block";
-  bag.innerHTML = bagCount.length;
+updateBagCount();
+function updateBagCount() {
+  if (bagCount.length > 0) {
+    bag.style.display = "block";
+    bag.innerHTML = bagCount.length;
+  }
+  else {
+    bag.style.display = "none";
+    
+  }
+  
 }
 
+// function to add product,s ids to local storage
+function addToCart(itemId) {
+  if (!bagCount.some((item) => item.id === itemId)) {
+    bagCount.push({ id: itemId, itemQuantity: 1 });
+    updateBagCount();
+    localStorage.setItem("bagcount", JSON.stringify(bagCount));
+    cartItem = getCartItems();
+    addQunatityToCartItem();
+    updateTotalPrice(cartItem);
+  }
+}
 
 // function to open cart and close on click
 cartOpenAndClose();
@@ -91,7 +98,7 @@ function cartOpenAndClose() {
   }
 }
 
-// adding product daynamically on cart 
+// adding product daynamically on cart
 function showTotalItem() {
   let cartItemPart = document.querySelector(".carts-items-part");
   cartItemPart.innerHTML = "";
@@ -159,18 +166,18 @@ function priceAndQuantity() {
     addQunatityToCartItem();
     updateTotalPrice();
   }
-
+  
   function removeItem(cardId) {
     bagCount = bagCount.filter((item) => item.id !== cardId);
     localStorage.setItem("bagcount", JSON.stringify(bagCount));
     cartItem = cartItem.filter((item) => item.id !== cardId);
-    bag.innerHTML = bagCount.length;
+    updateBagCount();
     let numberOfItem = document.querySelector(".number-of-item");
     numberOfItem.innerHTML = `Total Item In Your Cart : ${bagCount.length}`;
   }
 }
 
-// update prise when you add product in cart and when you incress of decerese quantity in cart 
+// update prise when you add product in cart and when you incress of decerese quantity in cart
 function updateTotalPrice() {
   let totalPriceEle = document.querySelector(".total-price");
   totalPriceEle.innerText = "";

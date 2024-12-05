@@ -16,73 +16,100 @@
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/cart.css">
 </head>
 
 <body>
     <!-- header------------------------------------------------------------------>
     <header id="mainHeader" class="container-fluid">
+        <div class="container-xxl d-flex justify-content-between align-items-center py-2 relative">
 
-        <div class="container-xxl">
-            <nav class="navbar navbar-expand-md">
-                <div>
-                    <a href="#" class="nevbar-brand"><img class="brand-img-dark" src="../img/HAMMER-LOGO-DARK.avif"
-                            alt="HAMMER_lOGO">
-                    </a>
-                    <a href="#" class="nevbar-brand"><img class="brand-img-white" src="../img/HAMMER-LOGO-WHITE.webp"
-                            alt="HAMMER_lOGO">
-                    </a>
-                </div>
-
-                <a class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                    <i class="fa-solid fa-bars"></i>
+            <div class="brand-img-folder">
+                <a href="#"><img class="brand-img-dark" src="../img/HAMMER-LOGO-DARK.avif" alt="HAMMER_lOGO">
                 </a>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav">
-                        <li class="nav-item dropdown">
-                            <a class="nav-link" href="#">
-                                Products &ensp;<i class="fa-solid fa-angle-down"></i></a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="#">Smartwatch</a>
-                                <a class="dropdown-item" href="#">Headphones</a>
-                                <a class="dropdown-item" href="#">Wireless Earbuds<a>
-                                        <a class="dropdown-item" href="#">Electric Toothbrush</a>
-                                        <a class="dropdown-item" href="#">Speaker</a>
-                                        <a class="dropdown-item" href="#">Wiered Earphone</a>
-                                        <a class="dropdown-item" href="#">Charging Essentials</a>
-                            </ul>
-                        </li>
-                        <li class="nav-item ">
-                            <a href="#" class="nav-link">Combos</a>
-
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">Warranty Registration</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">Gifting Witn Hammer</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">Refurbished Products</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="div2">
-                    <a href="#" class="login"><span class="social-icon mx-3 material-symbols-outlined">
-                            person
-                        </span></a>
-                    <a href="#" class="search"><span class=" social-icon mx-2 material-symbols-outlined">
-                            search
-                        </span></a>
-                    <a href="#" class="shoppingbag">
-                        <div class="bag-count"> </div>
-                        <span class="social-icon ms-3 material-symbols-outlined">
-                            shopping_bag
-                        </span>
+                <a href="#"><img class="brand-img-white" src="../img/HAMMER-LOGO-WHITE.webp" alt="HAMMER_lOGO">
+                </a>
+            </div>
+            <ul class="navbar-nav">
+                <li class="nav-item dropdown-here">
+                    <a class="nav-link" href="#">Products
+                        <i class="fa-solid fa-angle-down"></i>
                     </a>
-                </div>
-            </nav>
+                    <!-- dropdown manu products ------------------------------>
+                    <div class="container-fluid product-dropdown p-0">
+                        <div class="row">
+                            <div class="categories-folder col-3">
+                                <div class="categories" data-categorie="cate1">
+                                    Smartwatch
+                                </div>
+                                <div class="categories" data-categorie="cate2">
+                                    True Wireless Earbuds
+                                </div>
+                                <div class="categories" data-categorie="cate3">
+                                    Headphones
+                                </div>
+                                <div class="categories" data-categorie="cate4">
+                                    Electric Toothbrush
+                                </div>
+                                <div class="categories" data-categorie="cate5">
+                                    Speaker
+                                </div>
+                                <div class="categories" data-categorie="cate6">
+                                    Bluetooth Earphone
+                                </div>
+                                <div class="categories" data-categorie="cate7">
+                                    Charging Essentials
+                                </div>
+
+                            </div>
+                            <div class="categories-products col-9">
+                                <!-- containt created daynamically -->
+                            </div>
+                        </div>
+                    </div>
+                
+                </li>
+                <li class="nav-item ">
+                    <a href="#" class="nav-link">Combos</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Warranty Registration</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Gifting Witn Hammer</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Refurbished Products</a>
+                </li>
+            </ul>
+            <div class="icon-folder ">
+                <a href="#" class="login social-icon ">
+                    <span class="material-symbols-outlined fs-3">
+                        person
+                    </span></a>
+                <a href="#" class="search social-icon mx-3">
+                    <span class="material-symbols-outlined fs-3">
+                        search
+                    </span></a>
+                <a href="#" class="shoppingbag social-icon ">
+                    <div class="bag-count"> </div>
+                    <span class="  material-symbols-outlined fs-3">
+                        shopping_bag
+                    </span>
+                </a>
+                <a href="#" class="menu social-icon menu-bar-icon"  >
+                    <span class=" material-symbols-outlined fs-3 ">
+                        density_medium
+                    </span>
+                </a>
+            </div>
+
         </div>
         <hr class="header-hr">
+
+
+
+        <!-- to go on top -------------------->
         <a href="#"><img src="../img/scroll-up.png" class="scroll-up-btn" alt="go on top"></a>
     </header>
 
@@ -314,31 +341,45 @@
                         <div class="carousel-inner">
                             <div class="carousel-item active" data-bs-interval="3000">
                                 <div class="row text-center">
-                                    <div class="col d-none d-md-block "><a href="https://www.amazon.in/stores/HAMMER/page/BE0D4404-9535-4272-B2DE-FE2C637B7CCF?&linkCode=sl2&tag=storeid0a-21&linkId=798d3ef237d18a4eac1ec0b5680b62a9&language=en_IN&ref_=as_li_ss_tl"><img src="../img/s8/s8-img1.png"
-                                                alt="social-icon"></a></div>
-                                    <div class="col"><a href="https://www.flipkart.com/audio-video/headphones/hammer~brand/pr?sid=0pm,fcn&marketplace"><img src="../img/s8/s8-img2.png" alt="social-icon"></a>
+                                    <div class="col d-none d-md-block "><a
+                                            href="https://www.amazon.in/stores/HAMMER/page/BE0D4404-9535-4272-B2DE-FE2C637B7CCF?&linkCode=sl2&tag=storeid0a-21&linkId=798d3ef237d18a4eac1ec0b5680b62a9&language=en_IN&ref_=as_li_ss_tl"><img
+                                                src="../img/s8/s8-img1.png" alt="social-icon"></a></div>
+                                    <div class="col"><a
+                                            href="https://www.flipkart.com/audio-video/headphones/hammer~brand/pr?sid=0pm,fcn&marketplace"><img
+                                                src="../img/s8/s8-img2.png" alt="social-icon"></a>
                                     </div>
-                                    <div class="col"><a href="https://www.myntra.com/hammer?utm_source=dms_trafficaffiliates&utm_medium=dms_cuelinks_rev&utm_campaign=dms_trafficaffiliates_cuelinks_rev_20241203clw7fa4f26ta"><img src="../img/s8/s8-img3.png" alt="social-icon"></a>
+                                    <div class="col"><a
+                                            href="https://www.myntra.com/hammer?utm_source=dms_trafficaffiliates&utm_medium=dms_cuelinks_rev&utm_campaign=dms_trafficaffiliates_cuelinks_rev_20241203clw7fa4f26ta"><img
+                                                src="../img/s8/s8-img3.png" alt="social-icon"></a>
                                     </div>
-                                    <div class="col"><a href="https://www.reliancedigital.in/search?q=hammer:relevance"><img src="../img/s8/s8-img4.png" alt="social-icon"></a>
+                                    <div class="col"><a
+                                            href="https://www.reliancedigital.in/search?q=hammer:relevance"><img
+                                                src="../img/s8/s8-img4.png" alt="social-icon"></a>
                                     </div>
-                                    <div class="col d-none d-md-block"><a href="https://www.tatacliq.com/hammer/c-mbh12b10508?cid=af:homepage:cuelinks:hasoffers:15032017"><img src="../img/s8/s8-img5.png"
-                                                alt="social-icon"></a></div>
+                                    <div class="col d-none d-md-block"><a
+                                            href="https://www.tatacliq.com/hammer/c-mbh12b10508?cid=af:homepage:cuelinks:hasoffers:15032017"><img
+                                                src="../img/s8/s8-img5.png" alt="social-icon"></a></div>
                                 </div>
                             </div>
                             <div class="carousel-item" data-bs-interval="3000">
                                 <div class="row text-center">
-                                    <div class="col d-none d-md-block"><a href="https://cred.club/"><img src="../img/s8/s8-img6.webp"
-                                                alt="social-icon"></a></div>
-                                    <div class="col"><a href="https://www.nykaa.com/brands/hammer/c/14152?root=search,brand_menu,brand_list,HAMMER"><img src="../img/s8/s8-img7.png" alt="social-icon"></a>
+                                    <div class="col d-none d-md-block"><a href="https://cred.club/"><img
+                                                src="../img/s8/s8-img6.webp" alt="social-icon"></a></div>
+                                    <div class="col"><a
+                                            href="https://www.nykaa.com/brands/hammer/c/14152?root=search,brand_menu,brand_list,HAMMER"><img
+                                                src="../img/s8/s8-img7.png" alt="social-icon"></a>
                                     </div>
-                                    <div class="col"><a href="https://www.croma.com/searchB?q=Hammer%3Arelevance&text=Hammer"><img src="../img/s8/s8-img8.webp"
-                                                alt="social-icon"></a>
+                                    <div class="col"><a
+                                            href="https://www.croma.com/searchB?q=Hammer%3Arelevance&text=Hammer"><img
+                                                src="../img/s8/s8-img8.webp" alt="social-icon"></a>
                                     </div>
-                                    <div class="col"><a href="https://blinkit.com/prn/hammer-pulse-4.0-smart-watch/prid/506673"><img src="../img/s8/s8-img9.png" alt="social-icon"></a>
+                                    <div class="col"><a
+                                            href="https://blinkit.com/prn/hammer-pulse-4.0-smart-watch/prid/506673"><img
+                                                src="../img/s8/s8-img9.png" alt="social-icon"></a>
                                     </div>
-                                    <div class="col d-none d-md-block"><a href="https://www.amazon.in/stores/HAMMER/page/BE0D4404-9535-4272-B2DE-FE2C637B7CCF?&linkCode=sl2&tag=storeid0a-21&linkId=798d3ef237d18a4eac1ec0b5680b62a9&language=en_IN&ref_=as_li_ss_tl"><img src="../img/s8/s8-img10.png"
-                                                alt="social-icon"></a></div>
+                                    <div class="col d-none d-md-block"><a
+                                            href="https://www.amazon.in/stores/HAMMER/page/BE0D4404-9535-4272-B2DE-FE2C637B7CCF?&linkCode=sl2&tag=storeid0a-21&linkId=798d3ef237d18a4eac1ec0b5680b62a9&language=en_IN&ref_=as_li_ss_tl"><img
+                                                src="../img/s8/s8-img10.png" alt="social-icon"></a></div>
                                 </div>
                             </div>
                         </div>
@@ -466,36 +507,44 @@
                         <div class="carousel-inner">
                             <div class="carousel-item active" data-bs-interval="5000">
                                 <div class="row text-center">
-                                    <div class="col d-none d-md-block "><a href="https://yourstory.com/2022/01/startup-news-updates-jan-7-2022-shark-tank-india"><img src="../img/s11/s11-img1.webp"
-                                                alt="social-icon"></a></div>
+                                    <div class="col d-none d-md-block "><a
+                                            href="https://yourstory.com/2022/01/startup-news-updates-jan-7-2022-shark-tank-india"><img
+                                                src="../img/s11/s11-img1.webp" alt="social-icon"></a></div>
                                     <div class="col"><a href="https://inc42.com/"><img src="../img/s11/s11-img2.webp"
                                                 alt="social-icon"></a>
                                     </div>
-                                    <div class="col"><a href="https://timesofindia.indiatimes.com/gadgets-news/hammer-fit-smartwatch-launched-in-india-price-features-and-more/articleshow/100939997.cms"><img src="../img/s11/s11-img3.webp"
-                                                alt="social-icon"></a>
+                                    <div class="col"><a
+                                            href="https://timesofindia.indiatimes.com/gadgets-news/hammer-fit-smartwatch-launched-in-india-price-features-and-more/articleshow/100939997.cms"><img
+                                                src="../img/s11/s11-img3.webp" alt="social-icon"></a>
                                     </div>
-                                    <div class="col"><a href="http://www.univarta.com/news/business/story/2979390.html"><img src="../img/s11/s11-img4.webp"
-                                                alt="social-icon"></a>
+                                    <div class="col"><a
+                                            href="http://www.univarta.com/news/business/story/2979390.html"><img
+                                                src="../img/s11/s11-img4.webp" alt="social-icon"></a>
                                     </div>
-                                    <div class="col d-none d-md-block"><a href="https://www.aninews.in/news/business/business/featured-in-shark-tank-india-hammer-lifestyle-admits-on-clocking-30-cr-revenue-within-3-years-of-launch20220808184849/"><img src="../img/s11/s11-img5.webp"
-                                                alt="social-icon"></a></div>
+                                    <div class="col d-none d-md-block"><a
+                                            href="https://www.aninews.in/news/business/business/featured-in-shark-tank-india-hammer-lifestyle-admits-on-clocking-30-cr-revenue-within-3-years-of-launch20220808184849/"><img
+                                                src="../img/s11/s11-img5.webp" alt="social-icon"></a></div>
                                 </div>
                             </div>
                             <div class="carousel-item " data-bs-interval="5000">
                                 <div class="row text-center">
-                                    <div class="col d-none d-md-block"><a href="https://www.adgully.com/hammer-unveils-its-first-ad-campaign--nail-it-with-hammer-134589.html"><img src="../img/s11/s11-img6.webp"
-                                                alt="social-icon"></a></div>
-                                    <div class="col"><a href="https://english.jagran.com/technology/hammer-launches-active-20-and-cyclone-smartwatches-india-check-price-specs-and-other-details-10088323"><img src="../img/s11/s11-img7.webp"
-                                                alt="social-icon"></a>
+                                    <div class="col d-none d-md-block"><a
+                                            href="https://www.adgully.com/hammer-unveils-its-first-ad-campaign--nail-it-with-hammer-134589.html"><img
+                                                src="../img/s11/s11-img6.webp" alt="social-icon"></a></div>
+                                    <div class="col"><a
+                                            href="https://english.jagran.com/technology/hammer-launches-active-20-and-cyclone-smartwatches-india-check-price-specs-and-other-details-10088323"><img
+                                                src="../img/s11/s11-img7.webp" alt="social-icon"></a>
                                     </div>
-                                    <div class="col"><a href="https://gadgetsnow.indiatimes.com/wearables/hammer-launches-new-smartwatch-earbuds-in-india-price-features-and-more/articleshow/100506555.cms"><img src="../img/s11/s11-img8.webp"
-                                                alt="social-icon"></a>
+                                    <div class="col"><a
+                                            href="https://gadgetsnow.indiatimes.com/wearables/hammer-launches-new-smartwatch-earbuds-in-india-price-features-and-more/articleshow/100506555.cms"><img
+                                                src="../img/s11/s11-img8.webp" alt="social-icon"></a>
                                     </div>
-                                    <div class="col"><a href="https://tech.hindustantimes.com/photos/amazon-prime-day-sale-2023-hammer-active-2-0-and-cyclone-smartwatches-unveiled-check-prices-71689348419149.html"><img src="../img/s11/s11-img9.webp"
-                                                alt="social-icon"></a>
+                                    <div class="col"><a
+                                            href="https://tech.hindustantimes.com/photos/amazon-prime-day-sale-2023-hammer-active-2-0-and-cyclone-smartwatches-unveiled-check-prices-71689348419149.html"><img
+                                                src="../img/s11/s11-img9.webp" alt="social-icon"></a>
                                     </div>
-                                    <div class="col d-none d-md-block"><a href="https://www.financialexpress.com/"><img src="../img/s11/s11-img10.webp"
-                                                alt="social-icon"></a></div>
+                                    <div class="col d-none d-md-block"><a href="https://www.financialexpress.com/"><img
+                                                src="../img/s11/s11-img10.webp" alt="social-icon"></a></div>
                                 </div>
                             </div>
                         </div>

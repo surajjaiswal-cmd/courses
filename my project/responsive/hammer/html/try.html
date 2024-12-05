@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Remove Multiple Event Listeners</title>
+  <style>
+    .my-div {
+      width: 200px;
+      height: 200px;
+      background-color: lightcoral;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="my-div" id="myDiv">Click or hover me</div>
+  <button id="removeEventButton">Remove Event Listeners</button>
+
+  <script>
+    let myDiv = document.getElementById('myDiv');
+    let removeEventButton = document.getElementById('removeEventButton');
+
+    // Define multiple event handler functions
+    function handleClick() {
+      alert('Div clicked!');
+    }
+
+    function handleMouseOver() {
+      myDiv.style.backgroundColor = 'lightblue';
+    }
+
+    function handleMouseOut() {
+      myDiv.style.backgroundColor = 'lightcoral';
+    }
+
+    // Add multiple event listeners to the div
+    myDiv.addEventListener('click', handleClick);
+    myDiv.addEventListener('mouseover', handleMouseOver);
+    myDiv.addEventListener('mouseout', handleMouseOut);
+
+    // Remove multiple event listeners when the button is clicked
+    removeEventButton.addEventListener('click', () => {
+      myDiv.removeEventListener('click', handleClick);
+      myDiv.removeEventListener('mouseover', handleMouseOver);
+      myDiv.removeEventListener('mouseout', handleMouseOut);
+      alert('Event listeners removed!');
+    });
+  </script>
+</body>
+</html>

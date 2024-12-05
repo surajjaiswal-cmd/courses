@@ -1,4 +1,4 @@
-//to disaplay bloke header on top in 700px and scroll up button=========================
+//to disaplay bloke header on top in 700px and scroll up button-------------------------
 holdOnScreen();
 function holdOnScreen() {
   let header = document.getElementById("mainHeader");
@@ -14,15 +14,149 @@ function holdOnScreen() {
       scrollup.classList.remove("show");
       scrollup.classList.remove("move");
     }
-    if (window.pageYOffset > scrollDown + 990) {
-      header.classList.add("sticky-header");
+    if (window.pageYOffset > scrollDown + 800) {
+      header.classList.add("sticky");
     } else {
-      header.classList.remove("sticky-header");
+      header.classList.remove("sticky");
     }
   };
 }
 
-//to create product card for section 2 5 and 9
+ // Function to handle dropdown behavior based on screen width-------------------
+function showDropdown() {
+  const dropdownButton = document.querySelector(".dropdown-here");
+  const dropdownContent = document.querySelector(".product-dropdown");
+
+  function handleResize() {
+    if (window.innerWidth <= 768) {
+      showDropdownClick();
+    } else {
+      showDropdownHover();
+    }
+  }
+  handleResize();
+  window.addEventListener("resize", handleResize);
+
+  // Event handler functions
+  function handleMouseEnter() {
+    dropdownContent.style.display = "block";
+  }
+
+  function handleMouseLeave() {
+    dropdownContent.style.display = "none";
+  }
+
+  function handleClick() {
+    if (dropdownContent.style.display === "block") {
+      dropdownContent.style.display = "none";
+    } else {
+      dropdownContent.style.display = "block";
+    }
+  }
+
+  // Function for hover-based dropdown
+  function showDropdownHover() {
+    dropdownButton.removeEventListener("click", handleClick); //remove previous event
+    dropdownButton.addEventListener("mouseenter", handleMouseEnter);
+    dropdownContent.addEventListener("mouseenter", handleMouseEnter);
+    dropdownButton.addEventListener("mouseleave", handleMouseLeave);
+    dropdownContent.addEventListener("mouseleave", handleMouseLeave);
+  }
+  // Function for click-based dropdown
+  function showDropdownClick() {
+    dropdownButton.removeEventListener("mouseenter", handleMouseEnter); //remove previous event
+    dropdownButton.removeEventListener("mouseleave", handleMouseLeave); //remove previous event
+    dropdownButton.addEventListener("click", handleClick);
+  }
+}
+showDropdown();
+
+// create and display  all categories-------------------------------
+function dropdownProducts() {
+  // Function to handle dropdown behavior based on screen width
+
+  // creating categoris and inner products daynamically
+  let categoriesProducts = document.querySelector(".categories-products");
+  categoriesProducts.innerHTML = ``;
+  function dropdownProductsDaynamic(cateName) {
+    let products = "";
+    items.forEach((item) => {
+      if (item.category === `${cateName}`) {
+        products += `
+      <div class="viwe-categories-item" >
+      <a href="#">
+      <img src="${item.image}" alt="product image">
+      <h6 class="mt-2">${item.name}</h6>
+      </a>
+      </div>
+      `;
+      } else {
+        return;
+      }
+    });
+    return products;
+  }
+  let categories = [
+    "watch",
+    "earbuds",
+    "headphone",
+    "toothbrush",
+    "speaker",
+    "btearphone",
+    "charger",
+  ];
+  for (let i = 0; i < categories.length; i++) {
+    let getproduct = dropdownProductsDaynamic(categories[i]);
+    categoriesProducts.innerHTML += `
+ <div class="cart-viwe" id="cate${i + 1}">  
+ ${getproduct}
+ </div>
+ `;
+  }
+
+  // show categoris feed when hover==========================
+  let categoriesName = document.querySelectorAll(".categories");
+  let cateViwe = document.querySelectorAll(".cart-viwe");
+  categoriesName.forEach((categorie) => {
+    categorie.addEventListener("mouseenter", () => {
+      let cateId = categorie.getAttribute("data-categorie");
+      cateViwe.forEach((item) => {
+        item.style.display = "none";
+      });
+      document.getElementById(cateId).style.display = "flex";
+    });
+  });
+
+  // to open navbar in 768px width ==============
+  let menuBarIcon = document.querySelector(".menu-bar-icon");
+  let navbar = document.querySelector(".navbar-nav");
+
+  menuBarIcon.addEventListener("click", (event) => {
+    event.stopPropagation();
+
+    if (navbar.classList.contains("shownav")) {
+      navbar.classList.remove("shownav");
+      document.body.style.overflow = "auto";
+    } else {
+      navbar.classList.add("shownav");
+      document.body.style.overflow = "hidden";
+    }
+
+    // Close the navbar when clicking outside of it
+    document.addEventListener("click", (event) => {
+      if (!navbar.contains(event.target)) {
+        navbar.classList.remove("shownav");
+        document.body.style.overflow = "auto";
+      }
+    });
+
+
+  });
+
+}
+dropdownProducts();
+
+//to create product card for section 2 5 and 9==================================
 function DynamicCard(productCards, str, start, end) {
   productCards.innerHTML = "";
   for (let i = start; i < end; i++) {
@@ -39,17 +173,19 @@ function DynamicCard(productCards, str, start, end) {
         </div>
       </div>`;
   }
-  // visite cart.js 
+  // visite cart.js
 }
 
 // For section 2 top selling cards=========================
+
 const topSellingCards = document.querySelector(".s2-card-part");
 DynamicCard(topSellingCards, "s2-card", 0, 4);
 
 // section 3 top categories ============================
-s3Daynamic();
+
 function s3Daynamic() {
   let topCategories = document.querySelector(".s3-inner");
+
   topCategories.innerHTML = "";
   s3SlidesData.forEach((slide) => {
     topCategories.innerHTML += `
@@ -63,9 +199,10 @@ function s3Daynamic() {
     </div>`;
   });
 }
+s3Daynamic();
 
 // section 4 hammer grab list==============================
-s4Daynamic();
+
 function s4Daynamic() {
   let grabList1 = document.querySelector(".s4-inner-1");
   grabList1.innerHTML = "";
@@ -190,13 +327,16 @@ function s4Daynamic() {
  </div>`;
   }
 }
+s4Daynamic();
+
 //section 5 featured collection ============================
+
 let featuredCollectionCard = document.querySelector(".s5-card-part");
 DynamicCard(featuredCollectionCard, "s5-card", 4, 12);
 
 // for section 6 card collection=============================
 // Function to dynamically create the cards and scroll and flipe
-s6DynamicCard();
+
 function s6DynamicCard() {
   let collectionListCard = document.querySelector(".s6-card-part");
   collectionListCard.innerHTML = "";
@@ -298,9 +438,10 @@ function s6DynamicCard() {
     });
   }
 }
+s6DynamicCard();
 
 // for section 7 img comparison========================
-imgComparison();
+
 function imgComparison() {
   const slider = document.querySelector(".image-comparison .slider");
   const beforeImage = document.querySelector(".image-comparison .before-image");
@@ -315,17 +456,19 @@ function imgComparison() {
     sliderIcon.style.left = sliderValue;
   });
 }
+imgComparison();
 
 // section 9 shop the look=============================
+
 let shopTheLook = document.querySelector(".s9-card-part");
 DynamicCard(shopTheLook, "s9-card", 12, 15);
 
 //section 10 read what innterests=====================
-const details = document.querySelectorAll(".s10-details");
-const images = document.querySelectorAll(".s10-img-part img");
+let details = document.querySelectorAll(".s10-details");
+let images = document.querySelectorAll(".s10-img-part img");
 details.forEach((detail) => {
   detail.addEventListener("mouseenter", () => {
-    const imgId = detail.getAttribute("data-img");
+    let imgId = detail.getAttribute("data-img");
     images.forEach((img) => {
       img.style.display = "none"; // Hide all images
     });
