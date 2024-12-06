@@ -144,11 +144,11 @@ body::-webkit-scrollbar-thumb:hover {
         top: 4.8rem;
         left: 0;
         transform: translatex(-140vw);
-        transition: transform .3s ease-in-out;
     }
-
+    
     .navbar-nav.shownav {
         transform: translatex(0vw);
+        transition: transform .3s ease-in-out;
     }
 
     .nav-link {
@@ -769,6 +769,7 @@ h3 {
     display: flex;
     overflow-x: auto;
     gap: 1rem;
+    align-items: center;
 }
 
 .card-container {

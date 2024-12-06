@@ -559,7 +559,7 @@ let s6items = [
   {
     s6cardback: [
       {
-        id: 601,
+        id: "601",
         image: "../img/s6/s6-img1.1.webp",
         name: "Cyclone",
         extrainfo: "1.39' Display",
@@ -567,7 +567,7 @@ let s6items = [
         price: "1599.00",
       },
       {
-        id: 602,
+        id: "602",
         image: "../img/s6/s6-img1.2.webp",
         name: "Aero Max",
         extrainfo: "ANC + ENC | 30hrs Playtime",
@@ -575,7 +575,7 @@ let s6items = [
         price: "1499.00",
       },
       {
-        id: 603,
+        id: "603",
         image: "../img/s6/s6-img1.3.webp",
         name: "Stroke",
         extrainfo: "1.96' Display | AOD",
@@ -583,13 +583,13 @@ let s6items = [
         price: "1599.00",
       },
     ],
-    id: 6001,
+    id: "6001",
     image: "../img/s6/s6-img1.webp",
   },
   {
     s6cardback: [
       {
-        id: 604,
+        id: "604",
         image: "../img/s6/s6-img2.1.webp",
         name: "Active 2",
         extrainfo: "AOD | 600 Nits Brightness",
@@ -597,7 +597,7 @@ let s6items = [
         price: "2099.00",
       },
       {
-        id: 605,
+        id: "605",
         image: "../img/s6/s6-img2.2.webp",
         name: "Bash Lite",
         extrainfo: "Bluthooth V5.3 | 3.5mm Audio Jack",
@@ -605,7 +605,7 @@ let s6items = [
         price: "1299.00",
       },
       {
-        id: 606,
+        id: "606",
         image: "../img/s6/s6-img2.3.webp",
         name: "Hammer Airflow",
         extrainfo: "BT v5 | IPX4",
@@ -613,13 +613,13 @@ let s6items = [
         price: "899.00",
       },
     ],
-    id: 6002,
+    id: "6002",
     image: "../img/s6/s6-img2.webp",
   },
   {
     s6cardback: [
       {
-        id: 607,
+        id: "607",
         image: "../img/s6/s6-img3.1.webp",
         name: "KO PRO",
         extrainfo: "ENC | BT5.3",
@@ -627,7 +627,7 @@ let s6items = [
         price: "1299.00",
       },
       {
-        id: 608,
+        id: "608",
         image: "../img/s6/s6-img3.2.webp",
         name: "ACE Ultra",
         extrainfo: "AOD | 1.96'Screen",
@@ -635,7 +635,7 @@ let s6items = [
         price: "2149.00",
       },
       {
-        id: 609,
+        id: "609",
         image: "../img/s6/s6-img3.3.webp",
         name: "Bash Max",
         extrainfo: "1.65' Display",
@@ -643,13 +643,13 @@ let s6items = [
         price: "2499.00",
       },
     ],
-    id: 6003,
+    id: "6003",
     image: "../img/s6/s6-img3.webp",
   },
   {
     s6cardback: [
       {
-        id: 610,
+        id: "610",
         image: "../img/s6/s6-img4.1.webp",
         name: "Ultraflow Plus",
         extrainfo: "Oscillating | 8800 strokes",
@@ -657,7 +657,7 @@ let s6items = [
         price: "2090.00",
       },
       {
-        id: 611,
+        id: "611",
         image: "../img/s6/s6-img4.2.webp",
         name: "Flow 2.0",
         extrainfo: "AAA Battery | 24000 Stroke/Min",
@@ -665,7 +665,7 @@ let s6items = [
         price: "599.00",
       },
       {
-        id: 612,
+        id: "612",
         image: "../img/s6/s6-img4.3.webp",
         name: "Ultraflow 2.0",
         extrainfo: "Magnetic Charging | IPX7",
@@ -673,13 +673,13 @@ let s6items = [
         price: "1744.00",
       },
     ],
-    id: 6004,
+    id: "6004",
     image: "../img/s6/s6-img4.webp",
   },
   {
     s6cardback: [
       {
-        id: 613,
+        id: "613",
         image: "../img/s6/s6-img5.1.webp",
         name: "ACE 3",
         extrainfo: "1.85' IPS Display | Rotating crown",
@@ -687,7 +687,7 @@ let s6items = [
         price: "1599.00",
       },
       {
-        id: 614,
+        id: "614",
         image: "../img/s6/s6-img5.2.webp",
         name: "splendor",
         extrainfo: "Bluthooth Nackband",
@@ -695,7 +695,7 @@ let s6items = [
         price: "699.00",
       },
       {
-        id: 615,
+        id: "615",
         image: "../img/s6/s6-img5.3.webp",
         name: "ACE 4",
         extrainfo: "1.85' IPS Display | Metal Body",
@@ -703,13 +703,13 @@ let s6items = [
         price: "1599.00",
       },
     ],
-    id: 6005,
+    id: "6005",
     image: "../img/s6/s6-img5.webp",
   },
   {
     s6cardback: [
       {
-        id: 616,
+        id: "616",
         image: "../img/s6/s6-img6.1.webp",
         name: "G-Shots",
         extrainfo: "BT V5.3 | Gaming TWS",
@@ -717,7 +717,7 @@ let s6items = [
         price: "999.00",
       },
       {
-        id: 617,
+        id: "617",
         image: "../img/s6/s6-img6.2.webp",
         name: "Bash 2.0",
         extrainfo: "BT V5.0 | Deep Bash",
@@ -725,7 +725,7 @@ let s6items = [
         price: "3499.00",
       },
       {
-        id: 618,
+        id: "618",
         image: "../img/s6/s6-img6.3.png",
         name: "SMASH",
         extrainfo: `5W Speaker`,
@@ -733,7 +733,7 @@ let s6items = [
         price: "4999.00",
       },
     ],
-    id: 6006,
+    id: "6006",
     image: "../img/s6/s6-img6.webp",
   },
 ];

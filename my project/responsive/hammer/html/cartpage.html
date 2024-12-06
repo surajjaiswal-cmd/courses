@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hammer View All</title>
+    <title>Product View</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="icon" type="image/png" href="../img/tital-logo.png">
     <script src="https://kit.fontawesome.com/3635c4cce0.js" crossorigin="anonymous"></script>
@@ -17,32 +17,37 @@
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/cart.css">
-    <style>
-        .all-product {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            justify-items: center;
-            gap: 1.5rem;
-        }
-
-        @media (max-width:1000px) {
-            .all-product {
-                display: grid;
-                grid-template-columns: repeat(3, 1fr);
-                justify-items: center;
-                gap: 1.5rem;
-            }
+    <Style>
+        .Product-img {
+            width: 70%;
+            height: auto;
         }
 
         @media (max-width:768px) {
-            .all-product {
-                display: grid;
-                grid-template-columns: repeat(2, 1fr);
-                justify-items: center;
-                gap: 1.5rem;
+            header {
+                position: unset;
+                background-color: white;
+                top: 0rem;
+                z-index: 10;
+
             }
+
+            .brand-img-dark {
+                display: block;
+            }
+
+            .brand-img-white {
+                margin-top: 1rem;
+                display: none;
+            }
+
+            .social-icon {
+
+                color: rgb(0, 0, 0);
+            }
+
         }
-    </style>
+    </Style>
 </head>
 
 <body>
@@ -138,78 +143,13 @@
         <!-- to go on top -------------------->
         <a href="#"><img src="../img/scroll-up.png" class="scroll-up-btn" alt="go on top"></a>
     </header>
+
+
     <main>
 
-        <!-- sectionn 1 img slides------------------------------------------------->
-
-        <div class="container-fluid p-0 text-center section-1">
-            <div class="row">
-                <div class="col">
-
-                    <div id="carouselExample" class="carousel slide  " data-bs-ride="carousel">
-
-
-                        <div class="carousel-indicators">
-                            <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="0"
-                                class="active slided" aria-current="true" aria-label="Slide 1"></button>
-
-                            <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="1"
-                                aria-label="Slide 2"></button>
-
-                            <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="2"
-                                aria-label="Slide 3"></button>
-
-                            <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="3"
-                                aria-label="Slide 4"></button>
-
-                        </div>
-
-                        <div class="carousel-inner">
-
-                            <div class="carousel-item active">
-                                <a href="#"><img src="../img/viewall/topslider-img1.webp" class=" s1-slide"
-                                        alt="Slide 1"></a>
-                                <a href="#"><img src="../img/viewall/topslider-cut-img1.webp" class="s11-slide "></a>
-                            </div>
-
-                            <div class="carousel-item">
-                                <a href="#"><img src="../img/viewall/topslider-img2.webp" class=" s1-slide"
-                                        alt="Slide 2"></a>
-                                <a href="#"><img src="../img/viewall/topslider-cut-img2.webp" class="s11-slide "></a>
-                            </div>
-
-                            <div class="carousel-item">
-                                <a href="#"><img src="../img/viewall/topslider-img3.webp" class=" s1-slide"
-                                        alt="Slide 3"></a>
-                                <a href="#"><img src="../img/viewall/topslider-cut-img3.webp" class="s11-slide "></a>
-                            </div>
-
-                            <div class="carousel-item">
-                                <a href="#"><img src="../img/viewall/topslider-img4.webp" class=" s1-slide"
-                                        alt="Slide 4"></a>
-                                <a href="#"><img src="../img/viewall/topslider-cut-img4.webp" class="s11-slide "></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="container  product-viwe">
 
         </div>
-
-        <!--  featured collection same as previous page section 2 --------------------------------------------------->
-
-        <div class="container-xxl section-2">
-            <div class="row">
-                <div class="col text-center">
-                    <h2>Featured Collection</h2>
-                </div>
-            </div>
-            <div class="all-product mt-5">
-                <!-- containt ctreated dynaically by js  -->
-
-            </div>
-        </div>
-
 
         <!-- cart part ------------------------------------------------>
         <div class="cart-page">
@@ -322,8 +262,30 @@
     <script src="../js/items.js"></script>
     <script src="../js/index.js"></script>
     <script>
-        const totalProduct = document.querySelector(".all-product");
-        DynamicCard(totalProduct, "all-card", 0, items.length);
+        let productViwe = document.querySelector(".product-viwe");
+        let producId = localStorage.getItem("pid");
+        if (productViwe) {
+            items.forEach((item) => {
+                if (producId === item.id) {
+                    productViwe.innerHTML = `
+        <div class=" row d-flex    align-items-center">
+                <div class="col-6">
+                    <a href="#"><img class="Product-img" src="${item.image}" alt="Product Image"></a>
+                </div>
+                <div class="col-6">
+                    <div class="img-details mb-2 rounded">
+                        <h6 class=" fs-1">${item.name}</h6>
+                        <p class="s2-price mt-3 fs-3">Rs. ${item.price} <strike class="text-muted">Rs. ${item.actualprice}</strike></p>
+                        <p class="mt-3 fs-3">${item.rating}</p>
+                        <p class="fs-2">${item.extrainfo}</p>
+                        <button type="button" class="s2-buyitnow fs-5 " onclick="addToCart('${item.id}')">BUY IT NOW</button>
+                    </div>
+                </div>
+            </div>
+        `;
+                }
+            });
+        }
     </script>
     <script src="../js/cart .js"></script>
 </body>

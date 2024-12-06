@@ -1,5 +1,5 @@
 //to disaplay bloke header on top in 700px and scroll up button-------------------------
-holdOnScreen();
+
 function holdOnScreen() {
   let header = document.getElementById("mainHeader");
   let scrollup = document.querySelector(".scroll-up-btn");
@@ -21,14 +21,13 @@ function holdOnScreen() {
     }
   };
 }
-
- // Function to handle dropdown behavior based on screen width-------------------
+holdOnScreen();
+// Function to handle dropdown behavior based on screen width-------------------
 function showDropdown() {
   const dropdownButton = document.querySelector(".dropdown-here");
   const dropdownContent = document.querySelector(".product-dropdown");
-
   function handleResize() {
-    if (window.innerWidth <= 768) {
+    if (window.innerWidth < 768) {
       showDropdownClick();
     } else {
       showDropdownHover();
@@ -65,7 +64,10 @@ function showDropdown() {
   // Function for click-based dropdown
   function showDropdownClick() {
     dropdownButton.removeEventListener("mouseenter", handleMouseEnter); //remove previous event
-    dropdownButton.removeEventListener("mouseleave", handleMouseLeave); //remove previous event
+    dropdownContent.addEventListener("mouseenter", handleMouseEnter);
+    dropdownButton.removeEventListener("mouseleave", handleMouseLeave);
+    dropdownContent.removeEventListener("mouseleave", handleMouseLeave);
+
     dropdownButton.addEventListener("click", handleClick);
   }
 }
@@ -84,7 +86,7 @@ function dropdownProducts() {
       if (item.category === `${cateName}`) {
         products += `
       <div class="viwe-categories-item" >
-      <a href="#">
+      <a href="../html/cartpage.html" onclick="showProductId('${item.id}')">
       <img src="${item.image}" alt="product image">
       <h6 class="mt-2">${item.name}</h6>
       </a>
@@ -130,40 +132,56 @@ function dropdownProducts() {
   // to open navbar in 768px width ==============
   let menuBarIcon = document.querySelector(".menu-bar-icon");
   let navbar = document.querySelector(".navbar-nav");
+  const dropdownContent = document.querySelector(".product-dropdown");
 
   menuBarIcon.addEventListener("click", (event) => {
     event.stopPropagation();
 
-    if (navbar.classList.contains("shownav")) {
-      navbar.classList.remove("shownav");
-      document.body.style.overflow = "auto";
-    } else {
+    if (!navbar.classList.contains("shownav")) {
       navbar.classList.add("shownav");
       document.body.style.overflow = "hidden";
+    } else {
+      navbar.classList.remove("shownav");
+      document.body.style.overflow = "auto";
+      if (dropdownContent.style.display === "block") {
+        dropdownContent.style.display = "none";
+      }
     }
 
     // Close the navbar when clicking outside of it
     document.addEventListener("click", (event) => {
+      event.stopPropagation();
       if (!navbar.contains(event.target)) {
         navbar.classList.remove("shownav");
         document.body.style.overflow = "auto";
+        if (dropdownContent.style.display === "block") {
+          dropdownContent.style.display = "none";
+        }
       }
     });
-
-
   });
 
+  // to hide navbar automatically when width increse in open condition of navbar =============================
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 768) {
+      navbar.classList.remove("shownav");
+      document.body.style.overflow = "auto";
+    }
+  });
 }
 dropdownProducts();
 
 //to create product card for section 2 5 and 9==================================
 function DynamicCard(productCards, str, start, end) {
-  productCards.innerHTML = "";
-  for (let i = start; i < end; i++) {
-    const item = items[i];
-    productCards.innerHTML += `
+  if (productCards) {
+    productCards.innerHTML = "";
+    for (let i = start; i < end; i++) {
+      const item = items[i];
+      productCards.innerHTML += `
       <div class="${str} bg-light rounded mx-2 text-center" id="${item.id}">
-        <a href="#"><img class="s2-card-img" src="${item.image}" alt="Product Image"></a>
+        <a href="../html/cartpage.html" onclick="showProductId('${item.id}')">
+        <img class="s2-card-img" src="${item.image}" alt="Product Image")>
+        </a>
         <div class="img-details mb-2 rounded">
           <h6 class="pt-2">${item.name}</h6>
           <p class="s2-price">Rs. ${item.price} <strike class="text-muted">Rs. ${item.actualprice}</strike></p>
@@ -172,6 +190,7 @@ function DynamicCard(productCards, str, start, end) {
           <button type="button" class="s2-buyitnow" onclick="addToCart('${item.id}')">BUY IT NOW</button>
         </div>
       </div>`;
+    }
   }
   // visite cart.js
 }
@@ -186,9 +205,10 @@ DynamicCard(topSellingCards, "s2-card", 0, 4);
 function s3Daynamic() {
   let topCategories = document.querySelector(".s3-inner");
 
-  topCategories.innerHTML = "";
-  s3SlidesData.forEach((slide) => {
-    topCategories.innerHTML += `
+  if (topCategories) {
+    topCategories.innerHTML = "";
+    s3SlidesData.forEach((slide) => {
+      topCategories.innerHTML += `
     <div class="carousel-item ${slide.isActive}">
      <img src="${slide.imgSrc}" class="s3-slide img-fluid">
             <img src="${slide.imgCutSrc}" class="s31-slide img-fluid">
@@ -197,7 +217,8 @@ function s3Daynamic() {
             <a href="#" class="s3-buy-button"> BUY NOW</a>
         </div>
     </div>`;
-  });
+    });
+  }
 }
 s3Daynamic();
 
@@ -205,10 +226,11 @@ s3Daynamic();
 
 function s4Daynamic() {
   let grabList1 = document.querySelector(".s4-inner-1");
-  grabList1.innerHTML = "";
-  for (let i = 0; i < 3; i++) {
-    const slide = s4SlideData[i];
-    grabList1.innerHTML += `<div class="carousel-item 1.1 ${slide.active}">
+  if (grabList1) {
+    grabList1.innerHTML = "";
+    for (let i = 0; i < 3; i++) {
+      const slide = s4SlideData[i];
+      grabList1.innerHTML += `<div class="carousel-item 1.1 ${slide.active}">
     <div class="row">
       <div class="col-6">
         <div class="s4-img-div">
@@ -262,14 +284,17 @@ function s4Daynamic() {
         </div>
       </div>
     </div>
-  </div>`;
+       </div>`;
+    }
   }
 
   let grabList2 = document.querySelector(".s4-inner-2");
-  grabList2.innerHTML = "";
-  for (let i = 3; i < 6; i++) {
-    const slide = s4SlideData[i];
-    grabList2.innerHTML += `
+  if (grabList2) {
+    grabList2.innerHTML = "";
+
+    for (let i = 3; i < 6; i++) {
+      const slide = s4SlideData[i];
+      grabList2.innerHTML += `
   <div class="carousel-item 2.2 ${slide.active}">
    <div class="row">
      <div class="col">
@@ -325,6 +350,7 @@ function s4Daynamic() {
      </div>
    </div>
  </div>`;
+    }
   }
 }
 s4Daynamic();
@@ -339,14 +365,15 @@ DynamicCard(featuredCollectionCard, "s5-card", 4, 12);
 
 function s6DynamicCard() {
   let collectionListCard = document.querySelector(".s6-card-part");
-  collectionListCard.innerHTML = "";
-  s6items.forEach((item) => {
-    let backCard = "";
-    if (item.s6cardback) {
-      item.s6cardback.forEach((backitem) => {
-        backCard += `<a href="#">
+  if (collectionListCard) {
+    collectionListCard.innerHTML = "";
+    s6items.forEach((item) => {
+      let backCard = "";
+      if (item.s6cardback) {
+        item.s6cardback.forEach((backitem) => {
+          backCard += `<a href="../html/cartpage.html" onclick="showProductId('${backitem.id}')">
           <div class="s6-card1" id="${backitem.id}">
-            <img src="${backitem.image}" alt="slide back imgs">
+            <img src="${backitem.image}" alt="slide back imgs ">
             <div>
               <div class="s6-card-details">
                 <p class="s6-card-title my-0">${backitem.name}</p>
@@ -356,9 +383,9 @@ function s6DynamicCard() {
             </div>
           </div>
         </a>`;
-      });
-    }
-    collectionListCard.innerHTML += `
+        });
+      }
+      collectionListCard.innerHTML += `
       <div class="card-container" id="${item.id}">
         <div class="s6-card">
           <div class="card-side card-front">
@@ -376,8 +403,8 @@ function s6DynamicCard() {
           </div>
         </div>
       </div>`;
-  });
-
+    });
+  }
   // Horizontal scrolling
   scrollLeftSide(collectionListCard);
   function scrollLeftSide(scroll) {
@@ -475,3 +502,9 @@ details.forEach((detail) => {
     document.getElementById(imgId).style.display = "block"; // Show the corresponding image
   });
 });
+
+//function to save image id to send in next page to open full details ==================================
+
+function showProductId(Id) {
+  localStorage.setItem("pid", Id);
+}
