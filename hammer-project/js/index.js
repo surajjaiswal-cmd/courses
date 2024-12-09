@@ -110,15 +110,27 @@ function dropdownProducts() {
   for (let i = 0; i < categories.length; i++) {
     let getproduct = dropdownProductsDaynamic(categories[i]);
     categoriesProducts.innerHTML += `
- <div class="cart-viwe" id="cate${i + 1}">  
- ${getproduct}
- </div>
+  <div class="cart-viwe-folder" id="cate${i + 1}">
+        <div class="row">
+            <div class="col cart-viwe">
+                ${getproduct}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col text-center ">
+                <a href="../html/viewall.html" class="open-categories-item" onclick="showProductCategory('${categories[i]}')"><u>VIWE ALL</u></a>
+            </div>
+        </div>
+  </div>
  `;
+  }
+  function showProductCategory(cate) {
+    localStorage.setItem("category", cate);
   }
 
   // show categoris feed when hover==========================
   let categoriesName = document.querySelectorAll(".categories");
-  let cateViwe = document.querySelectorAll(".cart-viwe");
+  let cateViwe = document.querySelectorAll(".cart-viwe-folder");
   categoriesName.forEach((categorie) => {
     categorie.addEventListener("mouseenter", () => {
       let cateId = categorie.getAttribute("data-categorie");
@@ -214,7 +226,7 @@ function s3Daynamic() {
             <img src="${slide.imgCutSrc}" class="s31-slide img-fluid">
             <div class="carousel-caption">
               <p>${slide.caption}</p>
-            <a href="#" class="s3-buy-button"> BUY NOW</a>
+            <a href="../html/viewall.html" class="s3-buy-button" onclick="showProductCategory('${slide.category}')"> BUY NOW</a>
         </div>
     </div>`;
     });
@@ -234,51 +246,56 @@ function s4Daynamic() {
     <div class="row">
       <div class="col-6">
         <div class="s4-img-div">
-          <a href="#"><img class="s4-slide-img" src="${slide.img1}" alt="section-4 slide imgs"></a>
+          <a href="../html/cartpage.html" onclick="showProductId('${slide.id1}')"><img class="s4-slide-img" src="${slide.img1}" alt="section-4 slide imgs">
           <div class="carousel-caption">
             <p class="s4-big-img-details ${slide.textColor1} ">${slide.img1info}</p>
             <button type="button" class="s4-shop-now">Shop Now</button>
           </div>
+          </a>
         </div>
       </div>
       <div class="col-6">
         <div class="row">
           <div class="col">
             <div class="s4-img-div">
-              <a href="#"><img class="s4-slide-img" src="${slide.img2}" alt="section-4 slide imgs"></a>
+              <a href="../html/cartpage.html" onclick="showProductId('${slide.id2}')"><img class="s4-slide-img" src="${slide.img2}" alt="section-4 slide imgs">
               <div class="carousel-caption">
                 <p class="s4-small-img-details ${slide.textColor2} ">${slide.img2info}</p>
                 <button type="button" class="s4-shop-now">Shop Now</button>
               </div>
+              </a>
             </div>
           </div>
           <div class="col">
             <div class="s4-img-div">
-              <a href="#"><img class="s4-slide-img" src="${slide.img3}" alt="section-4 slide imgs"></a>
+              <a href="../html/cartpage.html" onclick="showProductId('${slide.id3}')"><img class="s4-slide-img" src="${slide.img3}" alt="section-4 slide imgs">
               <div class="carousel-caption">
                 <p class="s4-small-img-details ${slide.textColor3} ">${slide.img3info}</p>
                 <button type="button" class="s4-shop-now">Shop Now</button>
               </div>
+              </a>
             </div>
           </div>
         </div>
         <div class="row mt-4">
           <div class="col">
             <div class="s4-img-div">
-              <a href="#"><img class="s4-slide-img" src="${slide.img4}" alt="section-4 slide imgs"></a>
+              <a href="../html/cartpage.html" onclick="showProductId('${slide.id4}')"><img class="s4-slide-img" src="${slide.img4}" alt="section-4 slide imgs">
               <div class="carousel-caption">
                 <p class="s4-small-img-details ${slide.textColor4} ">${slide.img4info}</p>
                 <button type="button" class="s4-shop-now">Shop Now</button>
               </div>
+              </a>
             </div>
           </div>
           <div class="col">
             <div class="s4-img-div">
-              <a href="#"><img class="s4-slide-img" src="${slide.img5}" alt="section-4 slide imgs"></a>
+              <a href="../html/cartpage.html" onclick="showProductId('${slide.id5}')"><img class="s4-slide-img" src="${slide.img5}" alt="section-4 slide imgs">
               <div class="carousel-caption">
                 <p class="s4-small-img-details ${slide.textColor5} ">${slide.img5info}</p>
                 <button type="button" class="s4-shop-now">Shop Now</button>
               </div>
+              </a>
             </div>
           </div>
         </div>
@@ -299,53 +316,56 @@ function s4Daynamic() {
    <div class="row">
      <div class="col">
        <div class="s4-img-div">
-         <a href="#"><img class="s4-slide-img" src="${slide.img1}" alt="section-4 slide imgs"></a>
+         <a href="../html/cartpage.html" onclick="showProductId('${slide.id1}')"><img class="s4-slide-img" src="${slide.img1}" alt="section-4 slide imgs">
          <div class="carousel-caption">
            <p class="s4-big-img-details ${slide.textColor1}">${slide.img1info}</p>
            <button type="button" class="s4-shop-now">Shop Now</button>
          </div>
+         </a>
        </div>
      </div>
    </div>
    <div class="row mt-4">
      <div class="col">
        <div class="s4-img-div">
-         <a href="#"><img class="s4-slide-img" src="${slide.img2}" alt="section-4 slide imgs"></a>
+         <a href="../html/cartpage.html" onclick="showProductId('${slide.id2}')"><img class="s4-slide-img" src="${slide.img2}" alt="section-4 slide imgs">
          <div class="carousel-caption">
            <p class="s4-small-img-details ${slide.textColor2}">${slide.img2info}</p>
            <button type="button" class="s4-shop-now">Shop Now</button>
          </div>
+         </a>
        </div>
      </div>
      <div class="col"2>
        <div class="s4-img-div">
-         <a href="#"><img class="s4-slide-img" src="${slide.img3}" alt="section-4 slide imgs"></a>
+         <a href="../html/cartpage.html" onclick="showProductId('${slide.id3}')"><img class="s4-slide-img" src="${slide.img3}" alt="section-4 slide imgs">
          <div class="carousel-caption">
            <p class="s4-small-img-details ${slide.textColor3}">${slide.img3info}</p>
            <button type="button" class="s4-shop-now">Shop Now</button>
          </div>
+         </a>
        </div>
      </div>
    </div>
    <div class="row mt-4">
      <div class="col">
        <div class="s4-img-div">
-         <a href="#"><img class="s4-slide-img" src="${slide.img4}" alt="section-4 slide imgs"></a>
+         <a href="../html/cartpage.html" onclick="showProductId('${slide.id4}')"><img class="s4-slide-img" src="${slide.img4}" alt="section-4 slide imgs">
          <div class="carousel-caption">
            <p class="s4-small-img-details ${slide.textColor4}">${slide.img4info}</p>
- 
            <button type="button" class="s4-shop-now">Shop Now</button>
          </div>
+         </a>
        </div>
      </div>
      <div class="col">
        <div class="s4-img-div">
-         <a href="#"><img class="s4-slide-img" src="${slide.img5}" alt="section-4 slide imgs"></a>
+         <a href="../html/cartpage.html" onclick="showProductId('${slide.id5}')"><img class="s4-slide-img" src="${slide.img5}" alt="section-4 slide imgs">
          <div class="carousel-caption">
            <p class="s4-small-img-details ${slide.textColor5}">${slide.img5info}</p>
- 
            <button type="button" class="s4-shop-now">Shop Now</button>
          </div>
+         </a>
        </div>
      </div>
    </div>
@@ -503,8 +523,13 @@ details.forEach((detail) => {
   });
 });
 
-//function to save image id to send in next page to open full details ==================================
+//save image id to send in next page to open full details ==================================
 
 function showProductId(Id) {
   localStorage.setItem("pid", Id);
+}
+//save category to send in next page to open item with match category
+
+function showProductCategory(cate) {
+  localStorage.setItem("category", cate);
 }

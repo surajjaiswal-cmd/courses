@@ -55,7 +55,7 @@ body::-webkit-scrollbar-thumb:hover {
 .nav-link::after {
     content: '';
     position: absolute;
-    bottom: -1px;
+    bottom: 0px;
     left: 0px;
     background-color: rgb(11, 8, 8);
     width: 0%;
@@ -145,7 +145,7 @@ body::-webkit-scrollbar-thumb:hover {
         left: 0;
         transform: translatex(-140vw);
     }
-    
+
     .navbar-nav.shownav {
         transform: translatex(0vw);
         transition: transform .3s ease-in-out;
@@ -242,6 +242,13 @@ body::-webkit-scrollbar-thumb:hover {
     border-radius: 0rem 3rem 3rem 0rem;
 }
 
+.cart-viwe-folder {
+    display: flex;
+    flex-direction: column;
+    max-height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
 
 .cart-viwe {
     width: 6;
@@ -283,6 +290,14 @@ body::-webkit-scrollbar-thumb:hover {
 #cate6,
 #cate7 {
     display: none;
+}
+
+.open-categories-item {
+    text-decoration: none;
+    font-size: clamp(.6rem, 2vw, 1.2rem);
+    color: black;
+    font-weight: 600;
+    padding-bottom: 5rem;
 }
 
 /* main part========================================== */

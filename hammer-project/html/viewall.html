@@ -49,7 +49,7 @@
     <!-- header------------------------------------------------------------------>
     <header id="mainHeader" class="container-fluid">
         <div class="container-xxl d-flex justify-content-between align-items-center py-2 relative">
-
+    
             <div class="brand-img-folder">
                 <a href="../html/index.html"><img class="brand-img-dark" src="../img/HAMMER-LOGO-DARK.avif" alt="HAMMER_lOGO">
                 </a>
@@ -86,14 +86,14 @@
                                 <div class="categories" data-categorie="cate7">
                                     Charging Essentials
                                 </div>
-
+    
                             </div>
                             <div class="categories-products col-9">
                                 <!-- containt created daynamically -->
                             </div>
                         </div>
                     </div>
-
+    
                 </li>
                 <li class="nav-item ">
                     <a href="#" class="nav-link">Combos</a>
@@ -129,15 +129,16 @@
                     </span>
                 </a>
             </div>
-
+    
         </div>
         <hr class="header-hr">
-
-
-
+    
+    
+    
         <!-- to go on top -------------------->
         <a href="#"><img src="../img/scroll-up.png" class="scroll-up-btn" alt="go on top"></a>
     </header>
+
     <main>
 
         <!-- sectionn 1 img slides------------------------------------------------->
@@ -197,9 +198,9 @@
         </div>
 
         <!--  featured collection same as previous page section 2 --------------------------------------------------->
-
         <div class="container-xxl section-2">
             <div class="row">
+                <div class="text-secondary fs-5 total-items "></div>
                 <div class="col text-center">
                     <h2>Featured Collection</h2>
                 </div>
@@ -238,7 +239,7 @@
                 </div>
             </div>
         </div>
-
+        <div class=""></div>
     </main>
     <!-- footer-------------------------------------------------------->
 
@@ -322,8 +323,37 @@
     <script src="../js/items.js"></script>
     <script src="../js/index.js"></script>
     <script>
-        const totalProduct = document.querySelector(".all-product");
-        DynamicCard(totalProduct, "all-card", 0, items.length);
+
+        let totalProduct = document.querySelector(".all-product");
+        let totalItems = document.querySelector(".total-items");
+        let category = localStorage.getItem("category");
+        totalCount = 0;
+        if (!category.length == 0) {
+            items.forEach((item) => {
+                if (category === item.category) {
+                    totalProduct.innerHTML += `
+                     <div class="all-card bg-light rounded mx-2 text-center" id="${item.id}">
+                       <a href="../html/cartpage.html" onclick="showProductId('${item.id}')">
+                       <img class="s2-card-img" src="${item.image}" alt="Product Image")>
+                       </a>
+                       <div class="img-details mb-2 rounded">
+                         <h6 class="pt-2">${item.name}</h6>
+                         <p class="s2-price">Rs. ${item.price} <strike class="text-muted">Rs. ${item.actualprice}</strike></p>
+                         <p class="mt-1">${item.rating}</p>
+                         <p>${item.extrainfo}</p>
+                         <button type="button" class="s2-buyitnow" onclick="addToCart('${item.id}')">BUY IT NOW</button>
+                       </div>
+                     </div>`;
+                     totalCount++;
+                    }
+            });
+        } else {
+            DynamicCard(totalProduct, "all-card", 0, items.length);
+            totalCount = items.length
+        }
+totalItems.innerText = `${totalCount} Products`;
+
+
     </script>
     <script src="../js/cart .js"></script>
 </body>
