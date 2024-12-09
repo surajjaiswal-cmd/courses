@@ -118,7 +118,9 @@ function dropdownProducts() {
         </div>
         <div class="row">
             <div class="col text-center ">
-                <a href="../html/viewall.html" class="open-categories-item" onclick="showProductCategory('${categories[i]}')"><u>VIWE ALL</u></a>
+                <a href="../html/viewall.html" class="open-categories-item" onclick="showProductCategory('${
+                  categories[i]
+                }')"><u>VIWE ALL</u></a>
             </div>
         </div>
   </div>
@@ -183,6 +185,53 @@ function dropdownProducts() {
 }
 dropdownProducts();
 
+// search option---------------------------------------------
+function searchPart() {
+  // open and close-----------
+  let search = document.querySelector(".search");
+  let searchBar = document.querySelector(".search-bar");
+  let searchCloseBtn = document.querySelector(".search-close-btn");
+
+  search.addEventListener("click", () => {
+    searchBar.style.display = "block";
+  });
+  searchCloseBtn.addEventListener("click", () => {
+    searchBar.style.display = "none";
+  });
+
+  // input and output-----
+  let searchInput = document.querySelector(".search-input");
+  let optionsList = document.querySelector(".search-bar ul");
+
+  searchInput.addEventListener("input", () => {
+    optionsList.innerHTML = "";
+    let found = false;
+    items.forEach((item) => {
+      if (
+        item.name.includes(searchInput.value.toUpperCase()) ||
+        item.category.includes(searchInput.value)
+      ) {
+        let options = document.createElement("li");
+        options.innerHTML = `
+         <a href="../html/cartpage.html" onclick="showProductId('${item.id}')">
+         <div>
+           <img src="${item.image}" alt="${item.name}"> 
+         </div>
+         <div>
+            ${item.name} <br> ${item.extrainfo} 
+          </div>
+          </a>
+        `;
+        optionsList.append(options);
+        found = true;
+      }
+    });
+    if (!found) {
+      optionsList.innerHTML = "Not found";
+    }
+  });
+}
+searchPart();
 //to create product card for section 2 5 and 9==================================
 function DynamicCard(productCards, str, start, end) {
   if (productCards) {

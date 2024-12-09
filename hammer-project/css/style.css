@@ -301,6 +301,93 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 /* main part========================================== */
+
+/* search option=======================================*/
+
+.search-bar {
+    width: 100vw;
+    height: 100%;
+    position: absolute;
+    background-color: rgba(109, 106, 106, 0.4);
+    z-index: 30;
+    top: 0;
+    padding-top: 4rem;
+    display: none;
+}
+
+.input-folder {
+
+    width: 70%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.search-input {
+    width: 95%;
+    height: 2.5rem;
+    font-size: 1.3rem;
+    outline: none;
+    padding-left: 2rem;
+    border: 1px solid black;
+}
+
+/* 
+.search-btn {
+    color: black;
+    background-color: #fff;
+    width: 2.5rem;
+    height: 2.5rem;
+    align-content: center;
+    text-align: center;
+    border: 1px solid black;
+    border-left: 0;
+} */
+
+.search-close-btn {
+    width: 2.5rem;
+    height: 2.5rem;
+    border: 0;
+    font-size: 1.7rem;
+    font-weight: 550;
+    background-color: transparent;
+    padding-left: 1rem;
+}
+
+.search-bar ul {
+    margin: 0 auto;
+    width: 70%;
+    margin-top: 1rem;
+    text-align: left;
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.search-bar li {
+    padding: .5rem;
+    cursor: pointer;
+    border-bottom: 1px solid black;
+
+
+}
+
+.search-bar li:hover {
+    background-color: #dbdbdb;
+}
+
+.search-bar li a {
+    text-decoration: none;
+    color: black;
+    display: flex;
+    align-items: center;
+}
+
+.search-bar img {
+    width: 4rem;
+    height: auto;
+    margin-right: 1rem;
+}
+
 /* section 1 top banner slide=============================== */
 
 .section-1 {
@@ -1310,30 +1397,13 @@ form {
 }
 
 .input-box {
-    padding: .7rem 0;
     width: 100%;
     height: 2.4rem;
     margin-bottom: .5rem;
-    border: 1px solid rgb(0, 0, 0);
-    border-radius: 0rem;
-}
-
-.input-box:focus {
-    border: 1px solid black;
-    border-radius: 0;
     outline: none;
-    padding-left: 1.3rem;
+    padding-left: 1.2rem;
 }
 
-.input-box::placeholder {
-    padding-left: 1.3rem;
-    font-size: 1rem;
-    columns: rgb(27, 27, 27);
-}
-
-.input-box:focus::placeholder {
-    padding-left: 0;
-}
 
 .footer-subscribe {
     width: 100%;
