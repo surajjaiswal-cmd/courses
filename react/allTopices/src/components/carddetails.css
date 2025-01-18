@@ -1,0 +1,31 @@
+.cards-folder {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.list-item {
+
+    width: 15rem;
+    height: auto;
+    margin: 1rem;
+    background-color: #c7c3c3;
+    border-radius: .5rem;
+    padding: 1rem;
+}
+
+.list-item img {
+    width: 100%;
+    height: auto;
+
+}
+
+
+.s2-buyitnow {
+    background-color: #37cee1;
+    border: none;
+    padding: .2rem 1rem;
+    border-radius: 1rem;
+    color: rgb(82, 81, 79);
+    font-weight: 600;
+}

@@ -1,0 +1,152 @@
+[
+  {
+    "id": "016",
+    "image": "public/images/viewall/img-id16.webp",
+    "name": "FLOW Lite",
+    "price": "599.00",
+    "actualprice": "999.00",
+    "rating": "⭐⭐⭐⭐⭐(2)",
+    "extrainfo": "120 Day Battery Life | 2 Modes",
+    "category": "toothbrush"
+  },
+  {
+    "id": "017",
+    "image": "public/images/viewall/img-id17.webp",
+    "name": "PD 20W ADAPTOR",
+    "price": "799.00",
+    "actualprice": "1499.00",
+    "rating": "⭐⭐⭐⭐⭐(11)",
+    "extrainfo": "20W Charging | Type C Adaptor",
+    "category": "charger"
+  },
+  {
+    "id": "018",
+    "image": "public/images/viewall/img-id18.webp",
+    "name": "ACE PLUS",
+    "price": "1399.00",
+    "actualprice": "4999.00",
+    "rating": "⭐⭐⭐⭐⭐(91)",
+    "extrainfo": "IP67 | Metallic Alloy Body",
+    "category": "watch"
+  },
+  {
+    "id": "019",
+    "image": "public/images/viewall/img-id19.webp",
+    "name": "ULTRA FLOW",
+    "price": "999.00",
+    "actualprice": "2499.00",
+    "rating": "⭐⭐⭐⭐⭐(51)",
+    "extrainfo": "31000 Strokes/Min | 6 Modes",
+    "category": "toothbrush"
+  },
+  {
+    "id": "020",
+    "image": "public/images/viewall/img-id20.webp",
+    "name": "ULTRA PODS",
+    "price": "699.00",
+    "actualprice": "3499.00",
+    "rating": "⭐⭐⭐⭐⭐(23)",
+    "extrainfo": "Quick Charging | IPX5 Water Resisstant",
+    "category": "earbuds"
+  },
+  {
+    "id": "021",
+    "image": "public/images/viewall/img-id21.webp",
+    "name": "25W PD ADAPTOR",
+    "price": "899.00",
+    "actualprice": "1499.00",
+    "rating": "⭐⭐⭐⭐⭐(3)",
+    "extrainfo": "PPS Technology",
+    "category": "charger"
+  },
+  {
+    "id": "022",
+    "image": "public/images/viewall/img-id22.webp",
+    "name": "KO 2.0",
+    "price": "2299.00",
+    "actualprice": "9999.00",
+    "rating": "⭐⭐⭐⭐⭐(33)",
+    "extrainfo": "TWS | 13mm Sound Drivers",
+    "category": "btearphone"
+  },
+  {
+    "id": "023",
+    "image": "public/images/viewall/img-id23.webp",
+    "name": "15W USB CHARGER",
+    "price": "499.00",
+    "actualprice": " 999.00",
+    "rating": "⭐⭐⭐⭐⭐(1)",
+    "extrainfo": "Fast Charging | 15 Watt",
+    "category": "charger"
+  },
+  {
+    "id": "024",
+    "image": "public/images/viewall/img-id24.webp",
+    "name": "BASH LITE",
+    "price": "1299.00",
+    "actualprice": "3999.00",
+    "rating": "⭐⭐⭐⭐⭐(9)",
+    "extrainfo": "Bluetooth V5.3 | 3.5mm Audio Jack",
+    "category": "headphone"
+  },
+  {
+    "id": "025",
+    "image": "public/images/viewall/img-id25.webp",
+    "name": "CONQUER",
+    "price": "1999.00",
+    "actualprice": "3999.00",
+    "rating": "⭐⭐⭐⭐⭐(41)",
+    "extrainfo": "2.2 Amoled | BT Calling",
+    "category": "watch"
+  },
+  {
+    "id": "026",
+    "image": "public/images/viewall/img-id26.webp",
+    "name": "AECTIC 2.04",
+    "price": "2499.00",
+    "actualprice": "8999.00",
+    "rating": "⭐⭐⭐⭐⭐(29)",
+    "extrainfo": "2.04 Amoled | BT Calling",
+    "category": "watch"
+  },
+  {
+    "id": "027",
+    "image": "public/images/viewall/img-id27.webp",
+    "name": "SOLITUDE TWS",
+    "price": "1299.00",
+    "actualprice": "4999.00",
+    "rating": "⭐⭐⭐⭐⭐(11)",
+    "extrainfo": "ENC and Smart touch | BT V5.3",
+    "category": "earbuds"
+  },
+  {
+    "id": "028",
+    "image": "public/images/viewall/img-id28.webp",
+    "name": "POLAR 2.01",
+    "price": "5999.00",
+    "actualprice": "11999.00",
+    "rating": "⭐⭐⭐⭐⭐(1)",
+    "extrainfo": "Smartwatch x cluba | BT calling",
+    "category": "watch"
+  },
+  {
+    "id": "029",
+    "image": "public/images/viewall/img-id29.webp",
+    "name": "ACTIVE 3.0",
+    "price": "1799.00",
+    "actualprice": "5999.00",
+    "rating": "⭐⭐⭐⭐⭐(47)",
+    "extrainfo": "1.39 Display | BT calling",
+    "category": "watch"
+  },
+  {
+    "id": "030",
+    "image": "public/images/viewall/img-id30.webp",
+    "name": "KO MINI",
+    "actualprice": "899.00",
+    "price": "3499.00",
+    "rating": "⭐⭐⭐⭐⭐(84)",
+    "extrainfo": "Touch controls | Voice Assistant",
+    "category": "earbuds"
+  }
+]
