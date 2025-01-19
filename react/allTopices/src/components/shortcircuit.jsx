@@ -12,21 +12,22 @@ const UserProfile = () => {
 
   return (
     <div
-      style={{ padding: "20px", border: "1px solid #ccc" }}
+      style={{ padding: "20px", border: "1px solid #ccc", marginTop: "1rem" }}
       className="text-center">
       <h1>
         <u>short-circuit evaluation</u>
       </h1>
       <h2>User Profile</h2>
 
-      {/* Conditional Rendering */}
-      {isLoggedIn ? (
+      {isLoggedIn && (
         <div>
-          <p>Name: {user.name}</p>
-          <p>Age: {user.age}</p>
+          <p>Name: {user.name || "Unknown"}</p>
+          <p>Age: {user.age || "Not available"}</p>
           <button onClick={toggleLogin}>Logout</button>
         </div>
-      ) : (
+      )}
+
+      {!isLoggedIn && (
         <div>
           <p>Please log in to see your profile.</p>
           <button onClick={toggleLogin}>Login</button>

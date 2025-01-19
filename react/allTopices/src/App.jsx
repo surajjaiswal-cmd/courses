@@ -5,10 +5,12 @@ import UseState from "./components/usestate";
 import DriveState from "./components/drivestate";
 import LiftUpState from "./components/liftStateUp";
 import UserProfile from "./components/shortcircuit";
+import { Formahandle } from "./components/formhandling";
 
 function App() {
   return (
     <div className="container mt-5">
+      <Formahandle />
       <UserProfile />
       <EventHandel />
       <UseState />
