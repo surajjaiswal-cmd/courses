@@ -1,6 +1,9 @@
+* {
+  background-color: rgb(211, 245, 247);
+}
+
 body {
   overflow-x: hidden;
-
 }
 
 body::-webkit-scrollbar {
@@ -23,11 +26,14 @@ ol {
   box-sizing: border-box;
 }
 
+li {
+  background-color: initial;
+}
+
+
 @media(max-width:768px) {
   ol {
-
     grid-template-columns: repeat(2, 1fr);
-
   }
 }
 
