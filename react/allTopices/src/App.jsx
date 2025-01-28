@@ -6,10 +6,16 @@ import DriveState from "./components/drivestate";
 import LiftUpState from "./components/liftStateUp";
 import UserProfile from "./components/shortcircuit";
 import { Formahandle } from "./components/formhandling";
+import { UseEffect } from "./components/useeffec";
+import { Cleanup } from "./components/cleanupinuseeffect";
+import { FetchPikachu } from "./components/api/fatchPikachu";
 
 function App() {
   return (
     <div className="container mt-5">
+      <FetchPikachu />
+      <Cleanup />
+      <UseEffect />
       <Formahandle />
       <UserProfile />
       <EventHandel />

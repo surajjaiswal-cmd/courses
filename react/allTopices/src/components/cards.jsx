@@ -1,6 +1,5 @@
 import items from "../api/items.json";
 import CardDetails from "./carddetails";
-import carddetails from "./carddetails";
 function Cards() {
   return (
     <>
