@@ -15,7 +15,7 @@
 
     <style>
         body {
-        background-image : linear-gradient(to right, #6fb062, #22575a)
+            background-image: linear-gradient(to right, #6fb062, #22575a)
         }
 
         .topmain {
@@ -128,7 +128,7 @@
             </ol>
 
         </div>
-        <button type="button" class="clearbtn">Clear All</button>
+        <button class="clearbtn">Clear All</button>
     </div>
     <script>
         let input = document.querySelector('.input');
@@ -196,7 +196,6 @@
             // Mark as done button function
             listItem.querySelector(".donebtn").addEventListener('click', () => {
                 listItem.querySelector('p').classList.toggle("done");
-                listItem.querySelector('.editbtn').style.display = "none";
                 listItem.querySelector('.donebtn').style.display = "none";
             });
         }
@@ -232,7 +231,7 @@
 
         let clearwork = () => {
             todoArr = [];
-            localStorage.setItem('Todo Work', JSON.stringify(todoArr));
+            localStorage.removeItem('Todo Work');
             todoList.innerHTML = "";
             removeClearBtn();
         }

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modal Example</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hammer</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="icon" type="image/png" href="../img/tital-logo.png">
+  <script src="https://kit.fontawesome.com/3635c4cce0.js" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <style>
+    .cart-page {
+      position: unset;
+      top: 0;
+      width: 100%;
+      height: 100vh;
+      z-index: 10;
+      display: none;
+    }
+
+    .blank-part {
+      background-color: rgba(109, 106, 106, 0.4);
+      flex-grow: 1;
+      opacity: 0;
+      transition: transform 0.5s ease-in-out, opacity .3s ease-in-out;
+    }
+
+    .blank-part.visible {
+      opacity: 1;
+    }
+
+    .cart-part-border {
+      background-color: #fff;
+      transform: translateX(100%);
+      transition: transform .3s ease-in-out;
+    }
+
+    .cart-part-border.visible {
+      transform: translateX(0%);
+    }
+
+    .cart-part {
+      width: 29rem;
+      height: 100vh;
+      background-color: #fff;
+      transform: translatey(10%);
+      transition: transform, .7s ease-in-out, opacity 1s ease-in-out;
+      overflow: auto;
+      opacity: 0;
+    }
+
+    .cart-part.visible {
+      transform: translatey(0%);
+      opacity: 1;
+    }
+
+    .cart-header h2 {
+      font-weight: 600;
+    }
+
+    .cart-header button {
+      background-color: #ffffff00;
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+
+    .carts-items-part {
+      max-height: 50vh;
+      /* Adjust the height as needed */
+      overflow-y: auto;
+      /* Enable vertical scrolling */
+    }
+
+    .cart-item-img {
+      width: 100%;
+      height: auto;
+    }
+
+    .cart-item-details {
+      font-size: 1.2rem;
+    }
+
+    #increment,
+    #decrement {
+      background-color: white;
+    }
+
+    #increment:hover,
+    #decrement:hover {
+      color: white;
+      background-color: black;
+    }
+
+    .cart-buynow {
+      width: 95%;
+      background: rgb(0, 0, 0);
+      color: white;
+      border: 0;
+      border-radius: 3rem;
+      padding: .5rem 0;
+    }
+  </style>
+</head>
+
+<body>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, ipsum?</p>
+  <button class=" clickme btn btn-dark">btn</button>
+  <div class="cart-page">
+    <div class="blank-part"></div>
+    <div class="cart-part-border">
+      <div class="cart-part p-3">
+        <div class="cart-header d-flex justify-content-between ms-4">
+          <h2> Cart</h2>
+          <button class="border-0 cart-close me-4">✕</button>
+        </div>
+        <hr>
+        <p class="text-secondary m-3 number-of-item">Total Item In Your Cart : 0</p>
+        <div class="carts-items-part">
+          <!-- containt ctreated dynaically by js  -->
+        </div>
+        <div class="payment-part text-center">
+          <div class="cart-header mx-3 d-flex justify-content-between">
+            <p class="text-secondary ">SUBTOTAL</p>
+            <p class="fs-5 total-price">Rs. 0000</p>
+          </div>
+          <p class="text-center ">Shipping, taxes, and discount codes calculated at checkout.</p>
+          <button class="cart-buynow ">
+            BUY NOW <img class="mx-2" src="../img/upi_options.svg" alt="upi img"> >
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repudiandae, aperiam.</p>
+
+
+  <script>
+    let bag = document.querySelector(".bag-count");
+    let cartPage = document.querySelector(".cart-page");
+    let cartPart = document.querySelector(".cart-part");
+    let cartPartBorder = document.querySelector(".cart-part-border");
+    let blankPart = document.querySelector(".blank-part");
+
+    let clickme = document.querySelector('.clickme');
+
+    clickme.addEventListener('click', openCart);
+
+    function openCart() {
+      cartPage.style.display = "flex";
+      setTimeout(() => {
+        cartPartBorder.classList.add("visible");
+        cartPart.classList.add("visible");
+        blankPart.classList.add("visible");
+        cartPage.style.position = "fixed";
+        document.body.style.overflowy = "hidden";
+      }, 10)
+    }
+
+    // to close open cart
+    let closeCart = document.querySelectorAll(".blank-part,.cart-close");
+    closeCart.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        cartPartBorder.classList.remove("visible");
+        cartPart.classList.remove("visible");
+        blankPart.classList.remove("visible");
+        document.body.style.overflowy = "auto";
+
+        setTimeout(() => {
+          cartPage.style.position = "unset";
+          cartPage.style.display = "none";
+        }, 300);
+      });
+    });
+  </script>
+</body>
+
+</html>

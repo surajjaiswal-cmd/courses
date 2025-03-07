@@ -32,8 +32,10 @@ let getDateandTime = (dt) => {
   return formater.format(cur);
 };
 let getdata = async () => {
-    let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=153c307bfc4f2e128f0c62711c9f84a&units=metric`;
-  // this api link may not working 'https://openweathermap.org/current' open this site and creat account and replace this url with your api link or appid
+  let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=153c307bfc4f2e128f0c62711c9f84&units=metric`;
+
+  // Note: The API link provided ('https://openweathermap.org/current') may not be working due to API call limits.
+  // To use the API, create an account on the OpenWeatherMap website and replace the API link or `appid` with your own credentials.
   try {
     let response = await fetch(url);
     let data = await response.json();
@@ -63,5 +65,3 @@ input.addEventListener("keydown", (event) => {
   }
 });
 getdata();
-
-

@@ -5,7 +5,7 @@ let api = axios.create({
 });
 //get method used to fetch data of the  post
 export const getPost = () => {
-  return api.get("/posts");
+  return api.get(`/posts?_start=0&_limit=6`);
 };
 // delete method used to remove data in  post
 export const deletePost = (id) => {

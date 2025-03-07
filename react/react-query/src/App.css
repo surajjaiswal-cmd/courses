@@ -1,0 +1,74 @@
+* {
+  background-color: rgb(211, 245, 247);
+}
+
+body {
+  overflow-x: hidden;
+}
+
+body::-webkit-scrollbar {
+  background-color: transparent;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #fdcd0d99;
+  border-radius: 2px;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  background-color: #5555553a;
+}
+
+.list-item {
+  background-color: initial;
+}
+
+
+form {
+  background-color: #d7edfa;
+  margin: 0 auto;
+  justify-content: center;
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+input {
+  background-color: #fff;
+  padding-left: 1rem;
+  outline: none;
+  border: 1px solid rgba(0, 0, 0, 0.493);
+
+}
+
+.add-btn {
+
+  padding: .05rem .8rem;
+  border: 0;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.493);
+  color: rgb(90, 88, 88);
+}
+
+
+.comment {
+  background-color: transparent;
+  border: 0;
+  outline: 0;
+  resize: none;
+  width: 100%;
+}
+
+.comment::-webkit-scrollbar {
+  background-color: transparent;
+  width: .2rem;
+}
+
+.comment::-webkit-scrollbar-thumb {
+  background-color: inherit;
+  cursor: pointer;
+  border-radius: 2px;
+}
+
+.comment:hover::-webkit-scrollbar-thumb {
+  background-color: #5555553a;
+}

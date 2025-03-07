@@ -1,0 +1,19 @@
+* {
+  background-color: rgb(211, 245, 247);
+}
+
+body::-webkit-scrollbar {
+  background-color: transparent;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #ff0404;
+}
+
+.list-item {
+  background-color: initial;
+}
+
+.comment {
+  background-color: initial;
+}

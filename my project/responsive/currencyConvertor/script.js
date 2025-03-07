@@ -61,7 +61,7 @@ let updateprice1 = async () => {
     moreAbout.innerText = `More About ${from.value} / ${to.value}`;
     // updating more about text and link of from-input
     moreAbout.href = `https://www.google.com/finance/quote/${from.value}-${to.value}?sa=X&ved=2ahUKEwi5pY6u9e-JAxUecWwGHQ0oOu0QmY0JegQIARAs`;
-    //tomake sure enter number is bigger then 0 in from-input
+    //to make sure enter number is bigger then 0 in from-input
     if (input.value <= 0) {
       input.value = 1;
     }
@@ -156,7 +156,7 @@ dropDowns.forEach((dropoption) => {
     updateprice1();
   }
   dropoption.addEventListener("change", (event) => {
-// calling function to update price only in to-input when curency change in both input
+    // calling function to update price only in to-input when curency change in both input
     updateprice1();
     if (dropoption.name === "from") {
       // to update flage img in from
